@@ -1,0 +1,14 @@
+{
+	"browser": true,
+	"globals": [ "_", "$", "jquery" ],
+
+	"strict": true,
+	"undef": true,
+	"unused": true,
+	"bitwise": false,
+	"eqeqeq": true,
+	"latedef": true,
+	"noarg": true,
+
+	"curly": false
+}

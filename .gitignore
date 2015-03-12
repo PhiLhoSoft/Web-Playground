@@ -1,0 +1,7 @@
+.settings
+.idea
+.sass-cache
+/target
+/node
+/node_modules
+src/js/lib

@@ -1,0 +1,210 @@
+@import "philhosoft-base";
+
+
+$font-color: #333;
+$font-color-dark: black;
+
+$textfield-error-background: $pls-warning-color;
+$error-color: #b94a48;
+$warning-background: $pls-warning-color;
+$warning-color: #55A;
+
+$text-box-height: 28px;
+$text-box-line-height: 26px; // 1px padding will make it 28px
+$button-height: 28px;
+
+$title-background-color: $light-gray;
+$title-color: $pls-blue;
+$highlight-color: $pls-blue;
+
+$button-color: $very-dark-gray;
+$button-color-hover: $pls-blue;
+$button-color-disabled: $medium-gray;
+
+.warning-message
+{
+	color: $warning-color;
+	font-style: italic;
+	background-color: $warning-background;
+	font-size: 14px;
+}
+.inline-warning
+{
+	display: inline-block;
+	margin-left: 6px;
+	padding: 2px 6px;
+}
+
+.error-message
+{
+	color: $error-color;
+	font-style: italic;
+	background-color: $textfield-error-background;
+	font-size: 14px;
+}
+
+.proactor-form
+{
+	$form-textfield-width: 250px;
+
+	ul
+	{
+		margin-top: 10px;
+		list-style-type: none;
+	}
+
+	label
+	{
+		margin: 5px;
+		display: inline-block;
+		font-weight: normal;
+	}
+
+	input
+	{
+		margin: 5px;
+		line-height: $text-box-line-height;
+	}
+	input[type="text"], select
+	{
+		width: $form-textfield-width;
+	}
+
+	.input-error-message
+	{
+		font-size: 12px;
+		width: 50px;
+	}
+}
+
+
+table
+{
+	width: 100%;
+	min-width: 800px;
+
+	td
+	{
+		text-align: center;
+		padding: 5px;
+		border: 1px solid $medium-gray;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+	td.align-left
+	{
+		text-align: left;
+	}
+	td.align-right
+	{
+		text-align: right;
+	}
+
+	th
+	{
+		text-align: center;
+		padding: 5px;
+		border: 1px solid $medium-gray;
+		text-overflow: ellipsis;
+		overflow: hidden;
+
+		background-color: $pls-blue;
+		color: white;
+		font-size: 14px;
+		font-weight: normal;
+	}
+
+	tr
+	{
+		&.even
+		{
+			background-color: $light-gray;
+		}
+
+		$selected-color: lightgreen;
+
+		&.static.selected
+		{
+			background-color: $selected-color;
+		}
+
+		&.animated
+		{
+			$unselected-color: rgba(144, 238, 144, 0);
+			$transition: all 500ms ease-in;
+
+			&.selected
+			{
+				background-color: $selected-color;
+
+				&.ng-leave
+				{
+					@include transition($transition);
+					background-color: $selected-color;
+				}
+				&.ng-leave.ng-leave-active
+				{
+					background-color: $unselected-color;
+				}
+			}
+
+			&.ng-enter
+			{
+				@include transition($transition);
+				background-color: lightgreen;
+			}
+			&.ng-enter-active
+			{
+				background-color: $unselected-color;
+				@include transition($transition 500ms);
+			}
+
+
+			&.selected-add
+			{
+				@include transition($transition);
+				background-color: $unselected-color;
+			}
+			&.selected-add-active
+			{
+				background-color: $selected-color;
+			}
+
+			&.selected-remove
+			{
+				@include transition($transition);
+				background-color: $selected-color;
+			}
+			&.selected-remove-active
+			{
+				background-color: $unselected-color;
+			}
+		}
+	}
+}
+
+table.some-table-columns tr
+{
+	$widths: 12% 15% 12% 10% 17% 6% 6% 9% 8% 5%;
+	@for $i from 1 through length($widths)
+	{
+		> *:nth-child(#{$i})
+		{
+			width: nth($widths, $i);
+		}
+	}
+	// Last child takes remainder
+}
+
+table.some-table
+{
+	margin-top: 4px;
+	table-layout: fixed;
+
+	td
+	{
+		white-space: normal;
+		word-wrap: break-word;
+	}
+}
