@@ -1,0 +1,104 @@
+- trigger: fe
+    scope: javascript
+    description: forEach
+    tag: VanillaJS
+    tagHide: true
+    source: system
+    mTime: 1426162847492
+    text: |
+        ${1:myArray}.forEach(function (${2:elem})
+        {
+            ${3}
+        });
+
+- trigger: fi
+    scope: javascript
+    description: for in
+    tag: VanillaJS
+    tagHide: true
+    source: system
+    mTime: 1426162781165
+    text: |
+        for (${1:prop} in ${2:obj})
+        {
+            if (${2:obj}.hasOwnProperty(${1:prop}))
+            {
+            ${3}
+            }
+        }
+
+- trigger: fn
+    scope: javascript
+    description: function
+    tag: VanillaJS
+    tagHide: true
+    source: system
+    mTime: 1426162528546
+    text: |
+        function ${1:methodName}(${2:arguments})
+        {
+            ${3}
+        }
+
+- trigger: afn
+    scope: javascript
+    description: anonymous function
+    tag: VanillaJS
+    tagHide: true
+    source: system
+    mTime: 1426162540459
+    text: |
+        function (${1:arguments})
+        {
+            ${2}
+        }
+
+- trigger: pr
+    scope: javascript
+    description: prototype
+    tag: VanillaJS
+    tagHide: true
+    source: system
+    mTime: 1426162593231
+    text: |
+        ${1:ClassName}.prototype.${2:methodName} = function (${3:arguments})
+        {
+            ${4}
+        };
+
+- trigger: si
+    scope: javascript
+    description: setInterval
+    tag: VanillaJS
+    tagHide: true
+    source: system
+    mTime: 1426162602697
+    text: |
+        setInterval(function ()
+        {
+            ${2}
+        }, ${1:delay});
+
+- trigger: st
+    scope: javascript
+    description: setTimeout
+    tag: VanillaJS
+    tagHide: true
+    source: system
+    mTime: 1426162619956
+    text: |
+        setTimeout(function ()
+        {
+            ${2}
+        }, ${1:delay});
+
+- trigger: sf
+    description: $scope function definition (AngularJS)
+    scope: javascript
+    mTime: 1426163441280
+    text: |
+        $scope.${1:fn} = function ()
+        {
+            ${2}
+        };
+

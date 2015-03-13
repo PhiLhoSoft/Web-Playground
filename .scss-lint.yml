@@ -1,0 +1,16 @@
+scss_files: 'src/main/webapp/*.scss'
+
+exclude: 'src/main/webapp//compass/**'
+
+linters:
+  HexNotation:
+    style: uppercase
+
+  Indentation:
+    severity: warning
+    character: tab
+    width: 1
+
+  LeadingZero:
+    style: include_zero
+

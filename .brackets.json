@@ -1,11 +1,8 @@
 {
-	"language": {
-		"javascript": {
-			"linting.prefer": "JSHint",
-			"linting.usePreferredOnly": true
-		}
-	},
-	"jwolfe.file-tree-exclude.list": [
+    "sass.options": {
+        "outputDir": "../css"
+    },
+    "jwolfe.file-tree-exclude.list": [
         "ceylon"
     ]
 }
