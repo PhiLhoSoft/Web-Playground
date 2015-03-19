@@ -1,6 +1,15 @@
 {
+	"browser": true,
+	"mocha": true,
+	"predef": [ "module", "inject", "_", "$", "jquery" ],
+
+	"strict": false,
 	"undef": true,
 	"unused": true,
-	"jasmine": true,
-	"predef": [ "angular", "module", "inject", "_", "$", "jquery" ]
+	"bitwise": true,
+	"eqeqeq": true,
+	"latedef": true,
+	"noarg": true,
+
+	"curly": false
 }

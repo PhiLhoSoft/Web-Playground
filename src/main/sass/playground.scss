@@ -1,9 +1,6 @@
 @import "philhosoft-base";
 
 
-$font-color: #333;
-$font-color-dark: black;
-
 $textfield-error-background: $pls-warning-color;
 $error-color: #b94a48;
 $warning-background: $pls-warning-color;
@@ -43,7 +40,7 @@ $button-color-disabled: $medium-gray;
 	font-size: 14px;
 }
 
-.proactor-form
+.some-form
 {
 	$form-textfield-width: 250px;
 
@@ -113,74 +110,6 @@ table
 		color: white;
 		font-size: 14px;
 		font-weight: normal;
-	}
-
-	tr
-	{
-		&.even
-		{
-			background-color: $light-gray;
-		}
-
-		$selected-color: lightgreen;
-
-		&.static.selected
-		{
-			background-color: $selected-color;
-		}
-
-		&.animated
-		{
-			$unselected-color: rgba(144, 238, 144, 0);
-			$transition: all 500ms ease-in;
-
-			&.selected
-			{
-				background-color: $selected-color;
-
-				&.ng-leave
-				{
-					@include transition($transition);
-					background-color: $selected-color;
-				}
-				&.ng-leave.ng-leave-active
-				{
-					background-color: $unselected-color;
-				}
-			}
-
-			&.ng-enter
-			{
-				@include transition($transition);
-				background-color: lightgreen;
-			}
-			&.ng-enter-active
-			{
-				background-color: $unselected-color;
-				@include transition($transition 500ms);
-			}
-
-
-			&.selected-add
-			{
-				@include transition($transition);
-				background-color: $unselected-color;
-			}
-			&.selected-add-active
-			{
-				background-color: $selected-color;
-			}
-
-			&.selected-remove
-			{
-				@include transition($transition);
-				background-color: $selected-color;
-			}
-			&.selected-remove-active
-			{
-				background-color: $unselected-color;
-			}
-		}
 	}
 }
 

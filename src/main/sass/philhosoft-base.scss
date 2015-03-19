@@ -1,4 +1,4 @@
-@import "mycom-base";
+// PhiLhoSoft's base Sass styles
 
 @mixin border-radius($radius)
 {
@@ -26,6 +26,8 @@
 }
 
 $base-font: OpenSans, Verdana, sans-serif;
+$font-color: #333;
+$font-color-dark: black;
 
 $light-gray: #EEE;     // for backgrounds
 $medium-gray: #CCC;    // for borders

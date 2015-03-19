@@ -1,8 +1,8 @@
 {
 	"browser": true,
-	"globals": [ "_", "$", "jquery" ],
+	"predef": [ "_", "$", "jquery", "console" ],
 
-	"strict": true,
+	"strict": false,
 	"undef": true,
 	"unused": true,
 	"bitwise": false,

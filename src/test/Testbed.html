@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Playground Tests</title>
+	<link rel="stylesheet" media="all" href="../../node_modules/mocha/mocha.css">
+</head>
+<body>
+	<div id="mocha"><p>Playground Tests</p></div>
+	<div id="messages"></div>
+	<div id="fixtures"></div>
+
+	<!-- Testing scripts -->
+	<script src="../../node_modules/mocha/mocha.js"></script>
+	<script src="../../node_modules/chai/chai.js"></script>
+	<script src="../../node_modules/sinon/pkg/sinon.js"></script>
+	<script src="../../node_modules/sinon-chai/lib/sinon-chai.js"></script>
+
+	<!-- Application dependencies -->
+	<script src="../../lib/jquery/dist/jquery.min.js"></script>
+	<script src="../../lib/jquery-ui/jquery-ui.min.js"></script>
+	<script src="../../lib/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="../../lib/chosen/chosen.jquery.min.js"></script>
+	<script src="../../lib/lodash/lodash.min.js"></script>
+
+	<!-- Application scripts -->
+	<script src="../main/js/App.js"></script>
+	<script src="../main/js/Utilities.js"></script>
+
+	<script>
+		mocha.ui("bdd");
+		mocha.checkLeaks();
+		mocha.globals([ "jQuery" ]);
+		mocha.reporter("html");
+	</script>
+
+	<!-- Test scripts -->
+	<script src="js/TestApp.js"></script>
+	<script src="js/TestUtilities.js"></script>
+
+	<script>
+		if (window.mochaPhantomJS) { mochaPhantomJS.run(); }
+		else { mocha.run(); }
+	</script>
+</body>
+</html>
