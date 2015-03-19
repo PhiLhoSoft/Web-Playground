@@ -1,6 +1,7 @@
 .settings
 .idea
 .sass-cache
+/coverage
 /dist
 /node
 /node_modules

@@ -1,13 +1,13 @@
-var sass = require("node-sass"),
-	path = require("path");
+var sass = require("node-sass");
 
 sass.render(
 {
-	file: __dirname + "/src/main/sass/playground.scss",
-	includePaths: [ __dirname + "/src/main/sass" ],
-	outFile: __dirname + "/src/main/css/playground.css",
-	sourceMap: true,
+	file: "src/main/sass/playground.scss",
+	includePaths: [ "src/main/sass" ],
+	outFile: "src/main/css",
 	outputStyle: "nested",
+	sourceComments: true,
+	sourceMap: true,
 	importer: function(url)
 	{
 		return { file: url };
@@ -21,9 +21,9 @@ function(error, result)  // >= v3.0.0
 	}
 	else
 	{
-//~ 		console.log(result.css.toString());
-		console.log(result.path);
+		console.log("Result path: " + result.path);
 		console.log(result.stats);
+//~ 		console.log(result.css.toString());
 //~ 		console.log(result.map.toString()); // or console.log(JSON.stringify(result.map));
 	}
 });

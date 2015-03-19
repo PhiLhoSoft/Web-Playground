@@ -18,19 +18,21 @@
 	"devDependencies":
 	{
 		"bower": "^1.3.9",
-		"browserify": "^6.3.2",
-		"http-server": "^0.7.3",
-		"opener": "^1.4.0",
-		"jshint": "^2.5.10",
-		"node-sass": "3.0.0-alpha.0",
-		"istanbul": "~0.3.2",
-		"mocha": "^1.21.4",
-		"sinon": "^1.14.1",
+		"browserify": "^9.0.3",
 		"chai": "^2.1.0",
-		"sinon-chai": "^2.7.0",
-		"phantomjs": "~1.9.1",
+		"http-server": "^0.7.3",
+		"istanbul": "~0.3.2",
+		"jshint": "^2.5.10",
+		"mocha": "^1.21.4",
 		"mocha-phantomjs": "^3.5.3",
-		"rimraf": "^2.2.8"
+		"node-sass": "3.0.0-alpha.0",
+		"opener": "^1.4.0",
+		"phantomjs": "~1.9.1",
+		"rimraf": "^2.2.8",
+		"sinon": "^1.14.1",
+		"sinon-chai": "^2.7.0",
+		"uglify-js": "^2.4.17",
+		"watchify": "^2.4.0"
 	},
 	"scripts":
 	{
@@ -40,17 +42,20 @@
 		"prebuild": "npm run clean -s",
 		"build": "npm run build:scripts -s && npm run build:styles -s",
 		"build:scripts": "browserify -d src/main/js/App.js -p [minifyify --compressPath . --map main.js.map --output dist/main.js.map]",
-		"build:styles": "node node-sass.js",
+		"build:styles": "node node-sass-run.js",
 
 		"pretest": "npm install && npm run lint",
 		"pretestph": "npm install && npm run lint",
 		"prestart": "npm install",
 		"postinstall": "bower install",
-		"start": "http-server -a 0.0.0.0 -p 8000 src/main/html/",
+		"start": "http-server -a localhost -p 8090 src/main/html/",
 
 		"test": "mocha --reporter spec --recursive src/test",
+		"testb": "opener src/test/TestBed.html",
 		"//": "Windows-specific path because of https://github.com/joyent/node/issues/5841",
-		"testph": "mocha-phantomjs --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/TestBed.html",
-		"cover": "istanbul cover node_modules/mocha/bin/mocha -- --reporter dot --check-leaks src/test/ && opener ./coverage/lcov-report/lib/sinon-chai.js.html"
+		"testphw": "mocha-phantomjs --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/TestBed.html",
+		"testphu": "mocha-phantomjs --reporter spec -p ./node_modules/phantomjs/bin/phantomjs src/test/TestBed.html",
+		"cover": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --recursive src/test",
+		"coverr": "npm run cover && opener ./coverage/lcov-report/index.html"
 	}
 }
