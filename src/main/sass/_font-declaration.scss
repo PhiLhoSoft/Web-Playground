@@ -1,0 +1,30 @@
+// Fonts declarations for all browsers, trying various formats with priority on the lighter ones.
+// They allow to declare only OpenSans font family for the whole application,
+// and to use font-style: italic and font-weight: normal, bold or 300 (Light) in a natural way,
+// with proper fallback if the browser isn't able to load these fonts (unlikely on targetted browsers).
+//
+// Note: BoldItalic and LightItalic variants are not included here.
+// If these combinations are needed, they should be added here, otherwise the browser will use oblique instead of proper italic.
+
+@mixin font-face($family, $font-path, $file-name, $weight, $style)
+{
+	$file-path: $font-path + $file-name;
+	@font-face
+	{
+		font-family: "#{$family}";
+		src: url($file-path + ".eot");
+		src: url($file-path + ".eot?#iefix") format('embedded-opentype'),
+			 url($file-path + ".woff") format('woff'),
+			 url($file-path + ".ttf")  format('truetype'); // I skip the SVG format...
+		font-weight: #{$weight};
+		font-style: #{$style};
+	}
+}
+
+$font-path: '../font/';
+$font-name: 'OpenSans';
+
+@include font-face($font-name, $font-path, 'OpenSans-Light', '300', 'normal');
+@include font-face($font-name, $font-path, 'OpenSans-Italic', 'normal', 'italic');
+@include font-face($font-name, $font-path, 'OpenSans-Bold', 'bold', 'normal');
+@include font-face($font-name, $font-path, 'OpenSans-Regular', 'normal', 'normal');

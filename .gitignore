@@ -5,4 +5,5 @@
 /dist
 /node
 /node_modules
-/lib
+/asset/lib
+/asset/css

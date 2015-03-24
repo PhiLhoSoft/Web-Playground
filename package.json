@@ -2,7 +2,7 @@
 	"name": "philhosoft-js-playground",
 	"version": "0.1.0",
 	"description": "Playground Web Application: playing with JS frameworks",
-	"author": "PhiLho <PhiLho(a)GMX.net",
+	"author": "PhiLho <PhiLho(a)GMX.net>",
 	"contributors":
 	[
 		{ "name": "You", "email": "you@example.com" }
@@ -14,7 +14,7 @@
 		"type": "git",
 		"url": "https://github.com/PhiLhoSoft/Web-Playground.git"
 	},
-	"main": "src/main/index.html",
+	"main": "src/main/html/index.html",
 	"devDependencies":
 	{
 		"bower": "^1.3.9",
@@ -40,8 +40,9 @@
 		"prebuild": "npm run clean -s",
 		"build": "npm run build:scripts -s && npm run build:styles -s",
 		"build:scripts": "echo no build step currently",
-		"build:styles": "node-sass --source-comments --source-map --output-style nested --include-path src/main/sass --output src/main/css src/main/sass/playground.scss",
-		"wsass": "node-sass --watch",
+		"build:styles": "node-sass --source-comments --source-map=true --output-style nested --include-path src/main/sass --output asset/css src/main/sass/playground.scss",
+		"wsass": "node-sass --watch --source-comments --source-map=true --output-style nested --include-path src/main/sass --output asset/css src/main/sass/playground.scss",
+		"css": "node node-sass-run.js",
 
 		"pretest": "npm install && npm run lint",
 		"pretestph": "npm install && npm run lint",

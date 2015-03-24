@@ -1,6 +1,6 @@
-scss_files: 'src/main/webapp/*.scss'
+scss_files: 'src/main/sass/*.scss'
 
-exclude: 'src/main/webapp//compass/**'
+exclude: 'src/main/sass//compass/**'
 
 linters:
   HexNotation:

@@ -3,10 +3,9 @@
 	"version": "0.1.0",
 	"description": "Playground Web Application: playing with JS frameworks",
 	"keywords": [ "reactive", "experiment" ],
-	"authors": [ "PhiLho <PhiLho(a)GMX.net" ],
+	"authors": [ "PhiLho <PhiLho(a)GMX.net>" ],
 	"license": "http://www.opensource.org/licenses/Zlib",
 	"private": false,
-	"_directory": "lib/",
 	"main": "src/main/html/index.html",
 	"ignore":
 	[

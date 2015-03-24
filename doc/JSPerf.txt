@@ -1,0 +1,7 @@
+# JSPerf test cases I contributed to
+
+Plain JS vs Immutable vs mori vs underscore vs lodash
+http://jsperf.com/plain-js-vs-immutable-vs-mori/22
+
+native vs. map vs. underscore vs lo-dash vs jquery vs coffee
+http://jsperf.com/native-vs-array-js-vs-underscore/85

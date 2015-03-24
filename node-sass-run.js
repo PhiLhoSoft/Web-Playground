@@ -1,10 +1,17 @@
-var sass = require("node-sass");
+// A bit redundant with the command line in package.json, but I keep it as an example of script
+// which I feel was missing: https://github.com/sass/node-sass/issues/793
 
+var sass = require("node-sass");
+var fs = require("fs");
+
+var fileName = "playground";
+var sassPath = "src/main/sass/";
+var cssPath = "asset/css/";
 sass.render(
 {
-	file: "src/main/sass/playground.scss",
-	includePaths: [ "src/main/sass" ],
-	outFile: "src/main/css",
+	file: sassPath + fileName + ".scss",
+	includePaths: [ sassPath ],
+	outFile: cssPath,
 	outputStyle: "nested",
 	sourceComments: true,
 	sourceMap: true,
@@ -21,9 +28,9 @@ function(error, result)  // >= v3.0.0
 	}
 	else
 	{
-		console.log("Result path: " + result.path);
+//		console.log("Result path: " + result.path); // Always undefined...
 		console.log(result.stats);
-//~ 		console.log(result.css.toString());
-//~ 		console.log(result.map.toString()); // or console.log(JSON.stringify(result.map));
+		fs.writeFileSync(cssPath + fileName + ".css", result.css, "utf8");
+		fs.writeFileSync(cssPath + fileName + ".css.map", result.map, "utf8");
 	}
 });
