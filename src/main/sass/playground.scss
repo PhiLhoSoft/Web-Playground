@@ -1,5 +1,6 @@
 @import "font-declaration";
 @import "philhosoft-base";
+@import "bootstrap-overrides";
 
 
 $textfield-error-background: $pls-warning-color;
@@ -27,18 +28,6 @@ $button-color-disabled: $medium-gray;
 	.brand
 	{
 		font-weight: bold;
-	}
-}
-
-.navbar-nav
-{
-	li > a
-	{
-		font-size: 1.7rem;
-		i
-		{
-			margin-right: 26px;
-		}
 	}
 }
 

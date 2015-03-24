@@ -53,13 +53,58 @@ And ECMAScript 5, implemented in all major modern browsers, now prevent this, ma
 
 ### if (foo)
 
-I mention it because its usage is common. But it is generally a bad way to do the check.
+`if (foo)`<br>
+_or_<br>
+`if (foo.bar)`
 
-TODO
+I mention it because its usage is common. But it is generally a bad way to do the check.<br>
+First, the first form fails (with the error "ReferenceError: foo is not defined") if the variable is not defined at all. Now, the check is generally done for a property, which is safer. Note that so called global variables are, on the browser, properties of the `window` object, so instead of writing `if (foo)`, we can always write `if (window.foo)`, and it won't crash as the first form.<br>
+Second, it is a brittle check: it will fail if `foo.bar` is undefined, as expected, but also if it is "falsey", the JavaScript term for all values evaluated as false because of type coersion. So it also fails if `foo.bar` is defined but has the value `false`, or is an empty string, or zero, or `null`, etc.<br>
+Not very trustworthy...<br>
+To be honest, this form of test is mostly used when `foo.bar` is expected to be a function, to check if we can call it or not. In this case, it is unlikely to be 0 or '' or false...
 
-if (foo.do)
+### yourLibrary.isDefined() or someLibrary.isString()
 
-angular.isObject(foo) or _.isString(bar)
-etc.
+Several libraries offer facilities to properly do this check.
 
+AngularJS offers several functions for that: `isDefined()`, `isUndefined()`, but also specialized functions to check if a variable is defined and has the proper type:
+- angular.isArray
+- angular.isDate
+- angular.isElement
+- angular.isFunction
+- angular.isNumber
+- angular.isObject
+- angular.isString
+
+Underscore and Lodash has similar functions:
+- _.isElement
+- _.isArray
+- _.isObject
+- _.isArguments
+- _.isFunction
+- _.isString
+- _.isNumber
+- _.isBoolean
+- _.isDate
+- _.isRegExp
+- _.isError
+- _.isFinite
+- _.isNaN
+- _.isNull
+- _.isUndefined
+
+Lodash has some more functions:
+- _.isNative
+- _.isPlainObject
+- _.isTypedArray
+
+jQuery also has checks:
+- jquery.isArray
+- jquery.isFunction
+- jquery.isNumeric
+- jquery.isPlainObject
+- jquery.isWindow
+- jquery.isXMLDoc
+
+And so on.
 
