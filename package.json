@@ -41,14 +41,14 @@
 		"build": "npm run build:scripts -s && npm run build:styles -s",
 		"build:scripts": "echo no build step currently",
 		"build:styles": "node-sass --source-comments --source-map=true --output-style nested --include-path src/main/sass --output asset/css src/main/sass/playground.scss",
-		"wsass": "node-sass --watch --source-comments --source-map=true --output-style nested --include-path src/main/sass --output asset/css src/main/sass/playground.scss",
 		"css": "node node-sass-run.js",
 
 		"pretest": "npm install && npm run lint",
 		"pretestph": "npm install && npm run lint",
 		"prestart": "npm install",
 		"postinstall": "bower install",
-		"start": "http-server -a localhost -p 8090 src/main/html/",
+		"start": "http-server -a localhost -p 8090 .",
+		"go": "opener http://localhost:8090/src/main/html",
 
 		"test": "mocha --reporter spec --recursive src/test",
 		"testb": "opener src/test/TestBed.html",

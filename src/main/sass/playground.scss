@@ -19,6 +19,29 @@ $button-color: $very-dark-gray;
 $button-color-hover: $pls-blue;
 $button-color-disabled: $medium-gray;
 
+.branding
+{
+	font-size: 2rem;
+	line-height: 48px; // Logo size
+
+	.brand
+	{
+		font-weight: bold;
+	}
+}
+
+.navbar-nav
+{
+	li > a
+	{
+		font-size: 1.7rem;
+		i
+		{
+			margin-right: 26px;
+		}
+	}
+}
+
 .warning-message
 {
 	color: $warning-color;
