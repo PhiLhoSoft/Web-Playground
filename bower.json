@@ -1,7 +1,7 @@
 {
 	"name": "philhosoft-js-playground",
 	"version": "0.1.0",
-	"description": "Playground Web Application: playing with JS frameworks",
+	"description": "Playground Web Application: playing with JS frameworks / libraries",
 	"keywords": [ "reactive", "experiment" ],
 	"authors": [ "PhiLho <PhiLho(a)GMX.net>" ],
 	"license": "http://www.opensource.org/licenses/Zlib",
@@ -17,14 +17,14 @@
 	],
 	"dependencies":
 	{
-		"jquery": "2.1.1",
-		"jquery-ui": "1.11.2",
-		"bootstrap": "3.2.0",
-		"chosen": "https://github.com/harvesthq/chosen/releases/download/v1.4.1/chosen_v1.4.1.zip",
-		"fontawesome": "4.2.0",
-		"lodash": "~3.2.0"
-	},
-	"devDependencies":
-	{
+		"requirejs": "^2.1.6",
+		"jquery": "^2.1.1",
+		"jquery-ui": "^1.11.4",
+		"bootstrap": "^3.3.4",
+		"fontawesome": "^4.2.0",
+		"lodash": "^3.2.0",
+		"kefir": "^1.2.0",
+		"kefir-jquery": "^1.0.0",
+		"virtual-dom": "^2.0.1"
 	}
 }

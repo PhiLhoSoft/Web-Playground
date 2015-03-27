@@ -1,0 +1,30 @@
+Libraries I might include
+
+Crossroads
+Router
+https://github.com/millermedeiros/crossroads.js
+http://millermedeiros.github.io/crossroads.js/
+
+Hasher
+Browser history manager
+https://github.com/millermedeiros/Hasher
+
+JS-Signals
+Custom Event / Messaging system. Dependency of Hasher.
+http://millermedeiros.github.io/js-signals/
+https://github.com/millermedeiros/js-signals
+
+Moment.js
+To manage date / time cleanly
+
+Selectize
+Improved select box (better than Chosen and Select2)
+http://brianreavis.github.io/selectize.js/
+https://github.com/brianreavis/selectize.js
+
+Pikaday
+Lightweight date picker with no dependencies
+https://github.com/dbushell/Pikaday
+
+Pixi.js
+If I do a game...

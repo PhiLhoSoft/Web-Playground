@@ -1,6 +1,6 @@
 {
 	"browser": true,
-	"predef": [ "_", "$", "jquery", "console" ],
+	"predef": [ "_", "$", "jquery", "require", "define", "console" ],
 
 	"strict": false,
 	"undef": true,

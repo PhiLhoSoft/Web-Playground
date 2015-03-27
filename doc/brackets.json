@@ -1,5 +1,6 @@
 {
     "useTabChar": true,
+    "smartIndent": false,
     "fonts.fontSize": "14px",
     "dragDropText": true,
     "styleActiveLine": true,
@@ -274,5 +275,7 @@
             "scope": "javascript",
             "mTime": 1426163707201
         }
-    ]
+    ],
+    "markdown-preview.theme": "clean",
+    "markdown-preview.useGFM": true
 }

@@ -1,7 +1,16 @@
 # JSPerf test cases I contributed to
 
-Plain JS vs Immutable vs mori vs underscore vs lodash
-http://jsperf.com/plain-js-vs-immutable-vs-mori/22
+Plain JS vs Immutable vs mori vs underscore vs lodash vs Ramda
+Do complex transforms of Json data.
+Compare also old school JS v.3, JS v.5 with forEach and keys, and functional JS with reduce().
+http://jsperf.com/plain-js-vs-immutable-vs-mori/23
+Tested changes at http://plnkr.co/edit/xGEiIoga9RT6NEDveGHQ?p=info
 
 native vs. map vs. underscore vs lo-dash vs jquery vs coffee
+Only tests map()
 http://jsperf.com/native-vs-array-js-vs-underscore/85
+
+Lodash template vs JS concatetnation
+Conclusion: compile templates early, reuse them! Still a bit slower because of checks against data.
+http://jsperf.com/lodash-template-vs-js-concatenation
+
