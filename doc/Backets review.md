@@ -1,12 +1,18 @@
-Brackets review
+Adobe Brackets review
 
-I installed Brackets (v. 1.2 on Windows 7 with 8 GB of memory), it went out quite smoothly, just asking to directory where to install it.
+http://brackets.io/
+
+I installed Brackets (v. 1.2 on Windows 7 with 8 GB of memory), it went out quite smoothly, just asking for the directory where to install it.
 I opened it, it starts very fast.
 It has a dark UI but a light editing area. Not fan of dark theme, but I will try and keep it to see if it is effective to have a contrast between the UI and the editing area.
-Default syntax coloring theme looks OK so far.
-There is no drag'n'drop by default, which is why I rejected it on my first try (before 1.0) but it has been introduced in this version, and the blog post about this release [1] shows how to activate it.
-It is a bit primitive out of the box. You have to install several extensions to get things done efficiently... That's OK because you keep the application streamlined: no need to install CoffeeScript or Less extensions iif you code only in JavaScript and use Sass...
+Default syntax coloring theme looks OK so far. It can be changed with theme plugins.
+Actually, the UI theme cannot be changed easily, it needs a plugin to be able to modify it.
+There is no drag'n'drop of text by default, which is why I rejected this editor on my first try (before 1.0), because I use this operation a lot; but it has been introduced in this version, and the blog post about this release [1] shows how to activate it.
+The editor is a bit primitive out of the box. You have to install several extensions to get things done efficiently... That's OK because this keeps the application streamlined: no need to install CoffeeScript or Less extensions if you code only in JavaScript and use Sass...
 There are not much settings either: you have to edit Json files to customize things. A bit less intuitive, but I am OK with that, as that's the way I customize ScITE, my favorite (general purpose) source code editor. And not having complex dialogs to set every option also keeps the application light.
+
+After a few weeks of using Brackets, I appreciate it a lot: it is much less memory hungry than WebStorm or Eclipse, it is flexible and easy to use.
+I recommend it.
 
 
 [1] http://blog.brackets.io/2015/03/02/brackets-1-2-now-available/
@@ -46,7 +52,7 @@ See also https://github.com/adobe/brackets/wiki/User-Key-Bindings and https://gi
 
 #### Support of auto-completion, hinting & linting
 
-InteractiveLinter
+Interactive Linter
 Brings realtime JSHint/JSLint/CoffeeLint reports into Brackets as you work on your code, in form of margin indicators.
 https://github.com/MiguelCastillo/Brackets-InteractiveLinter
 

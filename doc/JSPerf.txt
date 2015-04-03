@@ -10,7 +10,7 @@ native vs. map vs. underscore vs lo-dash vs jquery vs coffee
 Only tests map()
 http://jsperf.com/native-vs-array-js-vs-underscore/85
 
-Lodash template vs JS concatetnation
+Lodash template vs JS concatenation
 Conclusion: compile templates early, reuse them! Still a bit slower because of checks against data.
-http://jsperf.com/lodash-template-vs-js-concatenation
+http://jsperf.com/lodash-template-vs-js-concatenation/2
 

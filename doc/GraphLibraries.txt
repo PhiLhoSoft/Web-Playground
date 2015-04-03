@@ -1,0 +1,75 @@
+List of JavaScript graph libraries
+
+A graph library is able to display of nodes linked by edges.
+
+Important choice criteria are:
+- technology: canvas (bitmap) vs. SVG (vector).
+- look: apparently some libraries can only do "data cloud" style, with (generally) lot of nodes, with radiating links, more or less stable / random; others can add constraints, allowing to display the nodes in "hierarchical" style, eg. aligned for the same level of depth, etc.
+- size (I listed the minimized (uncompressed) file).
+- liveness of the project (last activity since March 31).
+
+
+D3.js
+http://d3js.org/
+https://github.com/mbostock/d3
+v.3.5.5
+"A JavaScript visualization library for HTML and SVG"
+SVG-based; kind of base graphics library; can display a graph by itself, but also used as display library by other libraries (offering a different API / different layout algorithms).
+min.js is 151.125 KB
+Served as http://d3js.org/d3.v3.min.js, it is 57.9 KB (GZipped)
+
+cola.js
+http://marvl.infotech.monash.edu/webcola/
+https://github.com/tgdwyer/WebCola
+v. 3.1.0
+"Constraint-Based Layout in the Browser"
+D3-based
+min.js is 66.218 KB
+Total 217 KB with D3
+Last commit: 31 March 2015
+
+Dagre-D3
+.
+https://github.com/cpettitt/dagre-d3
+v. 0.4.3
+"A D3-based renderer for Dagre"
+D3-based, using graphlib and Dagre projects from the same author
+min.js is 142.093 KB (with graphlib and dagre included)
+Total 293 KB with D3
+Last commit: 31 March 2015 -- author has stopped dev on these (stable) projects but still maintain them
+
+Cytoscape.js
+http://js.cytoscape.org/
+https://github.com/cytoscape/cytoscape.js
+v. 2.3.11
+"Graph theory (a.k.a. network) library for analysis and visualisation (compatible with CommonJS/Node.js, AMD/Require.js, jQuery, Bower, npm, and plain JavaScript)"
+Canvas-based; has interesting plugins
+min.js is 258.167 KB
+Last commit: 31 March 2015
+
+Sigma
+http://sigmajs.org/
+https://github.com/jacomyal/sigma.js
+v. 1.0.3
+"Sigma is a JavaScript library dedicated to graph drawing"
+Canvas-based; has plugins; also has a SVG renderer; oriented "data cloud"
+min.js is 83.468 KB
+Last commit: 1 March 2015
+
+vis.js
+http://visjs.org/
+https://github.com/almende/vis
+v. 3.11.0
+"Dynamic, browser-based visualization library"
+Canvas-based; oriented "data cloud"
+min.js is 436.594 KB
+Last commit: 12 March 2015
+
+Arbor.js
+http://arborjs.org/
+https://github.com/samizdatco/arbor
+v. ?
+"a graph visualization library using web workers and jQuery"
+Canvas / SVG; oriented "data cloud"
+no min.js; 28 KB
+Last commit: 28 May 2012

@@ -22,6 +22,10 @@ Improved select box (better than Chosen and Select2)
 http://brianreavis.github.io/selectize.js/
 https://github.com/brianreavis/selectize.js
 
+DataTables
+jQuery plugin for advanced table management
+http://www.datatables.net/
+
 Pikaday
 Lightweight date picker with no dependencies
 https://github.com/dbushell/Pikaday
