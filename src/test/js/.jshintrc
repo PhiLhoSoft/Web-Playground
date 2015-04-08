@@ -1,7 +1,17 @@
 {
 	"browser": true,
 	"mocha": true,
-	"predef": [ "module", "inject", "_", "$", "jquery" ],
+	"globals":
+	{
+		"mocha": false,
+		"module": false,
+		"require": false,
+		"define": false,
+		"expect": false,
+		"_": false,
+		"$": false,
+		"jquery": false
+	},
 
 	"strict": false,
 	"undef": true,

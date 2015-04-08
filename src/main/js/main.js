@@ -63,16 +63,20 @@ require.config(
 	},
 	shim:
 	{
+		jquery:
+		{
+			exports: '$'
+		},
+		lodash:
+		{
+			exports: '_'
+		},
 		'bootstrap':
 		{
 			// These script dependencies should be loaded before loading this library
 			deps: [ "jquery" ],
 			// Custom export name, this would be lowercase otherwise
 			exports: "Backbone"
-		},
-		'lodash':
-		{
-			exports: '_'
 		},
 
 		/* jQuery UI */
@@ -250,5 +254,5 @@ require.config(
 require([ 'jquery', 'jquery.ui.dialog', 'bootstrap', 'lodash', 'app' ],
 function ( $,                            Bootstrap,   _,        App)
 {
-	new App;
+	new App();
 });

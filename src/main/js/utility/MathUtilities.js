@@ -1,5 +1,5 @@
 define(
-[ "./Helpers" ],
+[ "src/main/js/utility/Helpers" ],
 function(Helpers)
 {
 	'use strict';

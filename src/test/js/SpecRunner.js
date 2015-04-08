@@ -1,43 +1,52 @@
 require.config(
 {
-	baseUrl: '../../../asset/lib',
+	baseUrl: "../..",
 	paths:
 	{
 		// Application libraries
-		'jquery': "jquery/dist/jquery",
-		'jquery-ui': "jquery-ui/jquery-ui",
-		'bootstrap': "bootstrap/dist/js/bootstrap",
-		'lodash': "lodash/lodash",
+		'jquery': "asset/lib/jquery/dist/jquery",
+		'jquery-ui': "asset/lib/jquery-ui/jquery-ui",
+		'bootstrap': "asset/lib/bootstrap/dist/js/bootstrap",
+		'lodash': "asset/lib/lodash/lodash",
 
 		// Test libraries
-		'mocha': "../node_modules/mocha/mocha",
-		'chai': "../node_modules/chai/chai",
-//~ 		'chai-jquery': '../node_modules/chai-jquery',
-		'sinon': "../node_modules/sinon/pkg/sinon"
-		'sinon-chai': "../node_modules/sinon-chai/lib/sinon-chai"
+		'mocha': "node_modules/mocha/mocha",
+		'chai': "node_modules/chai/chai",
+//~ 		'chai-jquery': 'node_modules/chai-jquery',
+		'sinon': "node_modules/sinon/pkg/sinon",
+		'sinon-chai': "node_modules/sinon-chai/lib/sinon-chai",
 
 		// Application scripts
-		'app': "../../../main/js/App",
-		'cow': "../../../main/js/Cow",
-		'helpers': "../../../main/js/utility/Helpers",
-		'math-utilities': "../../../main/js/utility/MathUtilities",
-		'component-with-loading-lifecycle': "../../../main/js/utility/ComponentWithLoadingLifecycle"
+		'app': "src/main/js/App",
+		'cow': "src/main/js/Cow",
+		'helpers': "src/main/js/utility/Helpers",
+		'math-utilities': "src/main/js/utility/MathUtilities",
+		'component-with-loading-lifecycle': "src/main/js/utility/ComponentWithLoadingLifecycle"
 	},
 	shim:
 	{
 //~ 		'chai-jquery': [ 'jquery', 'chai' ]
+		jquery:
+		{
+			exports: '$'
+		},
+		lodash:
+		{
+			exports: '_'
+		}
 	}
 });
 
 define(function(require)
 {
 	var chai = require('chai');
-	var mocha = require('mocha');
+//	var mocha = require('mocha');
+	require('mocha');
 	require('jquery');
 //~ 	require('chai-jquery');
 
 	// Chai
-	expect = chai.expect;
+	var expect = chai.expect;
 //~ 	chai.use(chaiJquery);
 
 	mocha.ui("bdd");
@@ -48,16 +57,16 @@ define(function(require)
 
 	require(
 	[
-		'js/TestApp',
-		'js/TestCow',
-		'js/utility/TestHelpers',
-		'js/utility/TestMathUtilities'
+//		'src/test/js/TestApp',
+		'src/test/js/TestCow',
+		'src/test/js/utility/TestHelpers',
+		'src/test/js/utility/TestMathUtilities'
 	],
-	function(require)
+	function(/* require */)
 	{
 		if (window.mochaPhantomJS)
 		{
-			mochaPhantomJS.run();
+			window.mochaPhantomJS.run();
 		}
 		else
 		{

@@ -1,6 +1,14 @@
 {
 	"browser": true,
-	"predef": [ "_", "$", "jquery", "require", "define", "console" ],
+	"globals":
+	{
+		"_": false,
+		"$": false,
+		"jquery": false,
+		"require": false,
+		"define": false,
+		"console": false
+	},
 
 	"strict": false,
 	"undef": true,
