@@ -1,0 +1,88 @@
+body
+{
+	font-family: OpenSans, Verdana, sans-serif;
+	font-size: normal;
+	font-weight: normal;
+	color: #333;
+	line-height: normal;
+	background-color: white;
+}
+
+h1, h2, h3, h4
+{
+	color: #00617F;
+}
+
+.navbar
+{
+	background-color: white;
+	box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+	border: 0;
+	border-radius: 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 99;
+}
+.navbar .navbar-nav > li > a
+{
+	color: #00617F;
+	font-size: 1.7rem;
+}
+.navbar .navbar-nav > li > a i
+{
+	margin-right: 8px;
+}
+.navbar .navbar-nav > li > a:hover
+{
+	color: #00859B;
+}
+.navbar .navbar-nav > li.active > a, .navbar .navbar-nav > li.active > a:hover, .navbar .navbar-nav > li.active > a:focus
+{
+	color: white;
+	background-color: #84BD00;
+}
+
+
+.jumbotron
+{
+	background-color: #EFA;
+	background: url("splash.jpg") no-repeat scroll 50px 50px / 40% auto #EFFEEF;
+}
+.jumbotron h1
+{
+	color: #00617F;
+}
+.jumbotron::before
+{
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+.jumbotron-callout
+{
+	display: block;
+	color: inherit;
+	padding: 20px;
+	margin: 20px 0;
+	border: 1px solid #5E5;
+	border-radius: 3px;
+}
+.jumbotron-callout:hover { color: #EEE; }
+.jumbotron-callout p { font-size: 14px; }
+.jumbotron-callout p:last-child { margin-bottom: 0; }
+
+
+.branding
+{
+	font-size: 2rem;
+	line-height: 48px;
+}
+.branding .brand
+{
+	font-weight: bold;
+}
