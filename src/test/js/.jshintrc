@@ -7,10 +7,7 @@
 		"module": false,
 		"require": false,
 		"define": false,
-		"expect": false,
-		"_": false,
-		"$": false,
-		"jquery": false
+		"expect": false
 	},
 
 	"strict": false,

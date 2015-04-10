@@ -1,12 +1,13 @@
 // A bit redundant with the command line in package.json, but I keep it as an example of script
 // which I feel was missing: https://github.com/sass/node-sass/issues/793
 
-var sass = require("node-sass");
-var fs = require("fs");
+var sass = require('node-sass');
+var fs = require('fs');
 
 var fileName = "playground";
 var sassPath = "src/main/sass/";
 var cssPath = "asset/css/";
+
 sass.render(
 {
 	file: sassPath + fileName + ".scss",

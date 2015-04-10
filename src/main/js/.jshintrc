@@ -2,9 +2,7 @@
 	"browser": true,
 	"globals":
 	{
-		"_": false,
-		"$": false,
-		"jquery": false,
+		"module": false,
 		"require": false,
 		"define": false,
 		"console": false
