@@ -1,16 +1,29 @@
 # JSPerf test cases I contributed to
 
-Plain JS vs Immutable vs mori vs underscore vs lodash vs Ramda
+## Plain JS vs Immutable vs mori vs underscore vs lodash vs Ramda
 Do complex transforms of Json data.
 Compare also old school JS v.3, JS v.5 with forEach and keys, and functional JS with reduce().
 http://jsperf.com/plain-js-vs-immutable-vs-mori/23
 Tested changes at http://plnkr.co/edit/xGEiIoga9RT6NEDveGHQ?p=info
 
-native vs. map vs. underscore vs lo-dash vs jquery vs coffee
+## native vs. map vs. underscore vs lo-dash vs jquery vs coffee
 Only tests map()
 http://jsperf.com/native-vs-array-js-vs-underscore/85
 
-Lodash template vs JS concatenation
+## Lodash template vs JS concatenation
 Conclusion: compile templates early, reuse them! Still a bit slower because of checks against data.
 http://jsperf.com/lodash-template-vs-js-concatenation/2
 
+## Angular VS Knockout VS Ember VS React VS Mithril VS Mercury VS Ractive VS Vue VS Riot
+See also https://www.linkedin.com/pulse/20141013174222-7153704-lies-damned-lies-and-jsperf
+http://jsperf.com/angular-vs-knockout-vs-ember/588
+
+Actually this is not a very good test... It is not realistic and quite unfair.
+
+- Not realistic: a real application will not add data one by one, letting some frameworks to trigger redraw on each update.
+- Unfair: some implementations here use non-standard strategies to coalesce updates to given interval.
+
+We should make a better test:
+
+- Using a more realistic use case. Eg. adding all data at once (simulating a GET response), sorting it (simulating user clicking on a table header to sort a column) then filtering it (user typing a search query).
+- With two versions: canonical implementation, as shown in the tutorials of the framework; optimized implementation, using the coalescing strategy, if the framework allows it.

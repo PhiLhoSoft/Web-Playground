@@ -12,6 +12,7 @@ Important choice criteria are:
 D3.js
 http://d3js.org/
 https://github.com/mbostock/d3
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 v.3.5.5
 "A JavaScript visualization library for HTML and SVG"
 SVG-based; kind of base graphics library; can display a graph by itself, but also used as display library by other libraries (offering a different API / different layout algorithms).
@@ -21,6 +22,7 @@ Served as http://d3js.org/d3.v3.min.js, it is 57.9 KB (GZipped)
 cola.js
 http://marvl.infotech.monash.edu/webcola/
 https://github.com/tgdwyer/WebCola
+<script src="http://marvl.infotech.monash.edu/webcola/cola.v3.min.js"></script>
 v. 3.1.0
 "Constraint-Based Layout in the Browser"
 D3-based
@@ -37,6 +39,21 @@ D3-based, using graphlib and Dagre projects from the same author
 min.js is 142.093 KB (with graphlib and dagre included)
 Total 293 KB with D3
 Last commit: 31 March 2015 -- author has stopped dev on these (stable) projects but still maintain them
+
+jsPlumb
+http://jsplumbtoolkit.com - https://jsplumbtoolkit.com/demo/flowchart/dom.html
+https://github.com/sporritt/jsplumb/
+v. 1.7.5
+"Visual connectivity for webapps"
+Mixes HTML divs and SVG for connectors
+min.js is 182.577 KB for pure jS, 169.121 KB for jQuery version
+Last commit: 31 March 2015
+
+JoinJS
+http://jointjs.com/tutorial
+"JointJS diagramming library lets you create fully interactive diagramming tools"
+SVG-based. JointJS is based on jQuery, Underscore, Backbone and SVG. (feels like a lot...)
+
 
 Cytoscape.js
 http://js.cytoscape.org/
@@ -65,6 +82,15 @@ Canvas-based; oriented "data cloud"
 min.js is 436.594 KB
 Last commit: 12 March 2015
 
+JavaScript InfoVis Toolkit
+http://philogb.github.io/jit/ (http://thejit.org)
+https://github.com/philogb/jit
+v. 2.0.2
+"The JavaScript InfoVis Toolkit provides tools for creating Interactive Data Visualizations for the Web"
+Canvas-based; versatile
+min.js is 159 KB
+Last commit: 1 Jul 2013
+
 Arbor.js
 http://arborjs.org/
 https://github.com/samizdatco/arbor
@@ -73,3 +99,45 @@ v. ?
 Canvas / SVG; oriented "data cloud"
 no min.js; 28 KB
 Last commit: 28 May 2012
+
+Protovis
+https://github.com/mbostock/protovis
+http://mbostock.github.io/protovis/
+Ancestor of D3, abandoned.
+
+
+## Commercial
+
+Draw2D Touch
+http://www.draw2d.org/draw2d/
+http://draw2d.org/draw2d_touch/jsdoc_5/#!/example/connection_router
+SVG-based
+699 € - http://www.draw2d.org/draw2d/commercial.html
+
+yFiles for HTML
+http://www.yworks.com/en/products/yfiles/yfiles-for-html/
+http://live.yworks.com/demobrowser/index.html#Organization-Charts
+SVG-based
+http://www.yworks.com/en/products_yfileshtml_commercialinfo_licensetypes.html
+
+GoJS
+http://gojs.net/latest/index.html
+http://gojs.net/latest/samples/orgChartStatic.html
+Canvas-based
+$1350 / developer - http://www.nwoods.com/sales/index.html
+
+
+## General SVG drawing libraries
+
+http://raphaeljs.com/
+http://svgjs.com/
+http://paperjs.org/
+https://jonobr1.github.io/two.js/
+http://snapsvg.io/
+
+Canvas / WebGL
+
+http://www.pixijs.com/
+http://www.pixeljs.com/
+
+

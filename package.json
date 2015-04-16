@@ -31,39 +31,38 @@
 		"sinon-chai": "^2.7.0",
 		"browserify": "^6.0.2",
 		"debowerify": "^1.2.0",
+		"bower-resolve": "^2.2.1",
 		"beefy": "^2.1.3",
-		"uglify-js": "^2.4.17"
+		"minifyify": "^6.4.0"
 	},
 	"scripts":
 	{
-		"//": "Using Unix commands. On Windows, get UnxUtils or GnuWin32.",
+		"//": "Using Unix commands (rm, cp). On Windows, get UnxUtils or GnuWin32. Well worth it, anyway. Git's bins can do the job, too.",
 		"clean": "rm -rf dist/*",
 		"lint": "jshint src/main/js/",
 
-		"prebuild": "npm run clean -s",
-		"build": "npm run build-html -s && npm run build-js -s && npm run build-css -s",
-		"build-html": "cp src/main/html/index.html dist/",
-		"build-js-lib": "node browserify.js",
-		"build-js": "browserify -t debowerify --external dist/libraries.js --exclude asset/lib/**/*.js src/main/js/App.js -o dist/index.js",
+		"prebuild": "npm run clean",
+		"build": "npm run build-css && npm run build-js-lib && npm run build-js",
+		"postbuild": "cp src/main/html/index.html dist/",
 		"build-css": "node-sass --source-comments --source-map=true --output-style nested --include-path src/main/sass --output asset/css src/main/sass/playground.scss",
 		"alternative-build-css": "node node-sass-run.js",
+		"build-js-lib": "node browserify.js",
+		"build-js": "browserify -t debowerify --external dist/libraries.js --exclude asset/lib/**/*.js src/main/js/App.js -o dist/index.js",
 
-		"prestart": "npm install",
-		"postinstall": "bower install && npm run build-js-lib -s",
 		"start": "http-server -a localhost -p 8090 .",
 		"go": "opener http://localhost:8090/dist/",
-	    "startb": "beefy dist/index.js 8099 --live --open --  --exclude asset/lib/**/*.js src/main/js/App.js -d",
+	    "start-beefy": "beefy dist/index.js 8099 --live --open --  --exclude asset/lib/**/*.js src/main/js/App.js -d",
 
-		"pretest": "npm install && npm run lint -s",
-		"pretestphw": "npm install && npm run lint -s",
+		"pretest": "npm run lint",
+		"pretestphw": "npm run lint",
 		"test": "mocha --reporter spec",
-		"testOld": "mocha --reporter spec --recursive src/test",
-		"testb": "opener src/test/TestBed.html",
+		"test-old": "mocha --reporter spec --recursive src/test",
+		"test-browser": "opener src/test/TestBed.html",
 		"//": "Windows-specific path because of https://github.com/joyent/node/issues/5841",
-		"testphwr": "mocha-phantomjs --proxy-type=none --web-security=false --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/RequireTests.html",
-		"testphw": "mocha-phantomjs --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/TestBed.html",
-		"testphu": "mocha-phantomjs --reporter spec -p ./node_modules/phantomjs/bin/phantomjs src/test/TestBed.html",
+		"test-ph-wr": "mocha-phantomjs --proxy-type=none --web-security=false --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/RequireTests.html",
+		"test-ph-w": "mocha-phantomjs --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/TestBed.html",
+		"test-ph-u": "mocha-phantomjs --reporter spec -p ./node_modules/phantomjs/bin/phantomjs src/test/TestBed.html",
 		"cover": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --recursive src/test",
-		"coverr": "npm run cover && opener ./coverage/lcov-report/index.html"
+		"cover-report": "npm run cover && opener ./coverage/lcov-report/index.html"
 	}
 }

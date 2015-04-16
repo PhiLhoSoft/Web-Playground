@@ -1,37 +1,70 @@
-// Build the libraries bundle
+// Build the libraries bundle and the application too
+
+// Useful information:
+// - https://github.com/substack/node-browserify#methods of course
+// - http://bl.ocks.org/jfsiii/9982955
+// - https://www.npmjs.com/package/bower-resolve
 
 var browserify = require('browserify');
+var bowerResolve = require('bower-resolve');
 var fs = require('fs');
 
-var distPath = "dist/";
-var output = "libraries.js";
+var jsExt = ".js";
+var mapExt = ".map.json";
+var srcPath = "./src/main/js/";
+var distPath = "./dist/";
+var librariesFileName = "libraries";
+var appFileName = "index";
 
-var b = browserify(
+// Marked as "dependencies: none" in npm, so no point in parsing them.
+var noParseLibraries =
+[
+	'jquery',
+	'lodash',
+	'bootstrap', // Depends on jQuery, but not with require()
+	'mithril',
+	'kefir'
+];
+var otherLibraries =
+[
+	'moment', // Can require locale files
+//	'virtual-dom', // Not used yet
+];
+var configuration =
 {
+	debug: true, // For minifyify
+		// These don't work (on Windows), I have to put the path in each dependency
 //~ 	basedir: __dirname + "/asset/lib/",
 //~ 	basedir: "./asset/lib/",
-	// Marked as "dependencies: none" in npm, so no point in parsing them.
-	noParse:
-	[
-		'jquery',
-		'lodash',
-		'moment',
-		'kefir'
-	]
-}
-)
-.require(
-[
-	{ file: './asset/lib/jquery/dist/jquery.js', expose: 'jquery' },
-	{ file: './asset/lib/lodash/lodash.js', expose: 'lodash' },
-	{ file: './asset/lib/moment/moment.js', expose: 'moment' },
-	{ file: './asset/lib/bootstrap/dist/js/bootstrap.js', expose: 'bootstrap' },
-	{ file: './asset/lib/kefir/dist/kefir.js', expose: 'kefir' },
-	{ file: './asset/lib/kefir-jquery/kefir-jquery.js', expose: 'kefir-jquery' }
-	// Problems with its dependencies?
-//~ 	{ file: './asset/lib/virtual-dom/dist/virtual-dom.js', expose: 'virtual-dom' }
-]
-)
-//.transform('./node_modules/uglify-js/bin/uglifyjs"')
-.bundle()
-.pipe(fs.createWriteStream(distPath + output));
+	noParse: noParseLibraries
+};
+
+bowerResolve.init(function ()
+{
+	var libraries = noParseLibraries.concat(otherLibraries);
+
+	var b = browserify(configuration);
+
+	// Create a bundle with the libraries
+
+	libraries.forEach(function (lib)
+	{
+		b.require(bowerResolve(lib), { expose: lib });
+	});
+//	b.add(srcPath + 'common.js')
+//		.transform('deamdify')
+	b.transform('debowerify');
+	b.plugin('minifyify', { map: librariesFileName + mapExt, output: distPath + librariesFileName + mapExt });
+	b.bundle().pipe(fs.createWriteStream(distPath + librariesFileName + jsExt));
+
+	// Create a bundle with the application, depending on the libraries above
+
+	b = browserify(configuration);
+	libraries.forEach(function (lib)
+	{
+		b.external(lib);
+	});
+	b.add(srcPath + 'App.js');
+	b.plugin('minifyify', { map: appFileName + mapExt, output: distPath + appFileName + mapExt });
+	b.bundle().pipe(fs.createWriteStream(distPath + appFileName + jsExt));
+});
