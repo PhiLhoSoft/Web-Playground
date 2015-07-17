@@ -2,6 +2,8 @@
 	"browser": true,
 	"globals":
 	{
+		"_": false,
+		"$": false,
 		"module": false,
 		"require": false,
 		"define": false,
@@ -11,10 +13,12 @@
 	"strict": false,
 	"undef": true,
 	"unused": true,
-	"bitwise": false,
+	"bitwise": true,
 	"eqeqeq": true,
 	"latedef": true,
 	"noarg": true,
+	"sub": true,
 
+	"unused": "vars",
 	"curly": false
 }

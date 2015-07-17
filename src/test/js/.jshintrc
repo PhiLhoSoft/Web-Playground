@@ -3,7 +3,6 @@
 	"mocha": true,
 	"globals":
 	{
-		"mocha": false,
 		"module": false,
 		"require": false,
 		"define": false,

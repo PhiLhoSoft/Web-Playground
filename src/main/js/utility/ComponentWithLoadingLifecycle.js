@@ -4,27 +4,46 @@ function(Helpers)
 {
 	'use strict';
 
-	// Private property.
 	var State = Helpers.createEnum('DISABLED', 'LOADING', 'LOADED', 'EMPTY');
-
-	// Private functions.
 
 	function isStateValid(state)
 	{
 		return State[state] !== undefined;
 	}
 
-	// Constructor, with class name.
-	function ComponentWithLoadingLifecycle(state, loadedMessage, emptyMessage, disabledMessage)
+	function ComponentWithLoadingLifecycle(configuration)
 	{
-		// Public but using underscore convention to mark them as "private".
-		this._loadedMessage = loadedMessage;
-		this._emptyMessage = emptyMessage;
-		this._disabledMessage = disabledMessage === undefined ? '' : disabledMessage;
-		this.setState(state);
+		_.defaults(configuration,
+		{
+			state: State.LOADING,
+			loading: "Loading...",
+			select: "Select an option",
+			empty: "Empty",
+			disabled: "-"
+		});
+		this._configuration =
+		{
+			loadingMessage: configuration.loading,
+			selectMessage: configuration.select,
+			emptyMessage: configuration.empty,
+			disabledMessage: configuration.disabled
+		};
+		this.setState(configuration.state);
+		this.size = 0;
 	}
 
-	// Public methods, assigned to prototype, so shared among instances.
+	ComponentWithLoadingLifecycle.prototype._updateMessage = function()
+	{
+		switch (this.state)
+		{
+			case State.LOADING: return this._loadingMessage;
+			case State.LOADED: return this._loadedMessage;
+			case State.EMPTY: return this._emptyMessage;
+			case State.DISABLED: return this._disabledMessage;
+		}
+	};
+
+	ComponentWithLoadingLifecycle.State = State;
 
 	/**
 	 * Sets the new state, and update the message and the boolean flags accordingly.
@@ -33,55 +52,63 @@ function(Helpers)
 	ComponentWithLoadingLifecycle.prototype.setState = function(state)
 	{
 		if (!isStateValid(state))
-			throw 'Invalid state';
+			throw new Error("Invalid state '" + state + "'");
 
 		// Real public properties.
 		this.state = state;
 		this.message = this._updateMessage();
-		this.isDisabled = this.state === State.DISABLED || this.state === State.LOADING;
+		this.isDisabled = this.state === State.DISABLED || this.state === State.LOADING || this.state === State.EMPTY;
 		this.isLoading = this.state === State.LOADING;
-		this.isLoaded = this.state === State.LOADED;
+		this.isLoaded = this.state === State.LOADED || this.state === State.EMPTY; // Empty => loaded with zero items
 		this.isEmpty = this.state === State.EMPTY;
 	};
 
-	// Public but underscore convention mark it as private
-	ComponentWithLoadingLifecycle.prototype._updateMessage = function()
+	/**
+	 * Tells the model the size of the data (number of elements) in the component.
+	 * Mostly to allow it to see if it is empty.
+	 */
+	ComponentWithLoadingLifecycle.prototype.setSize = function(size)
 	{
-		switch (this.state)
+		this.size = size;
+		if (size === 0)
 		{
-			case State.LOADING: return 'Loading...';
-			case State.LOADED: return this._loadedMessage;
-			case State.EMPTY: return this._emptyMessage;
-			case State.DISABLED: return this._disabledMessage;
+			this.setState(State.EMPTY);
+		}
+		else
+		{
+			this.setState(State.LOADED);
 		}
 	};
 
-	// Public static property.
-	ComponentWithLoadingLifecycle.State = State;
-
-	// Public static method, assigned to class.
-	// Instance ('this') is not available in static context.
 	/**
-	 * Creates a ComponentWithLoadingLifecycle in LOADING state with the messages corresponding to the various states.
-	 * @param {string} loadedMessage - message for loaded state, telling to start interactiing with the component
-	 * @param {string} emptyMessage - message for empty state, when the list of data is empty (nothing to select)
-	 * @param {string} [disabledMessage] - message for disabled state; can be omitted if this state won't be used
+	 * Creates a ComponentWithLoadingLifecycle with an object specifying the messages corresponding to the various states,
+	 * and the initial state (LOADING by default). The models provides defaults messages for unspecified ones.
+	 *
+	 * @param {Object} configuration - definition of various messages, and the initial state
+	 *   @param {State} [state] - initial state; if not specified, will be State.LOADING
+	 *   @param {string} [loadingMessage] - message for loading state, telling data is being fetched
+	 *   @param {string} [selectMessage] - message for loaded state, telling to select a value
+	 *   @param {string} [emptyMessage] - message for empty state, when the list of data is empty (nothing to select)
+	 *   @param {string} [disabledMessage] - message for disabled state
+	 *
+	 * @return {Object} model
+	 *   @param {State} state - current state: DISABLED, LOADING, LOADED or EMPTY
+	 *   @param {string} message - current message
+	 *   @param {boolean} isDisabled - true if state is DISABLED or LOADING or EMPTY
+	 *   @param {boolean} isLoading - true if state is LOADING
+	 *   @param {boolean} isLoaded - true if state is LOADED
+	 *   @param {boolean} isEmpty - true if state is EMPTY
+	 *   @param {number} size - given number of elements in the component
 	 */
-	ComponentWithLoadingLifecycle.create = function(loadedMessage, emptyMessage, disabledMessage)
+	ComponentWithLoadingLifecycle.create = function(configuration)
 	{
-		return new ComponentWithLoadingLifecycle(State.LOADING, loadedMessage, emptyMessage, disabledMessage);
-	};
-	/**
-	 * Creates a ComponentWithLoadingLifecycle in DISABLED state with the messages corresponding to the various states.
-	 * @param {string} loadedMessage - message for loaded state, telling to start interactiing with the component
-	 * @param {string} emptyMessage - message for empty state, when the list of data is empty (nothing to select)
-	 * @param {string} [disabledMessage] - message for disabled state; can be omitted if this state won't be used
-	 */
-	ComponentWithLoadingLifecycle.createDisabled = function(loadedMessage, emptyMessage, disabledMessage)
-	{
-		return new ComponentWithLoadingLifecycle(State.DISABLED, loadedMessage, emptyMessage, disabledMessage);
+		var conf = {};
+		if (_.isObject(configuration))
+		{
+			conf = _.clone(configuration);
+		}
+		return new ComponentWithLoadingLifecycle(conf);
 	};
 
-	// Return the constructor function (the object).
 	return ComponentWithLoadingLifecycle;
 });

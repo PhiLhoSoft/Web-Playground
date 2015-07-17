@@ -22,8 +22,7 @@ var noParseLibraries =
 	'jquery',
 	'lodash',
 	'bootstrap', // Depends on jQuery, but not with require()
-	'mithril',
-	'kefir'
+	'mithril'
 ];
 var otherLibraries =
 [
@@ -54,7 +53,7 @@ bowerResolve.init(function ()
 //	b.add(srcPath + 'common.js')
 //		.transform('deamdify')
 	b.transform('debowerify');
-	b.plugin('minifyify', { map: librariesFileName + mapExt, output: distPath + librariesFileName + mapExt });
+	b.plugin('minifyify', { map: false });
 	b.bundle().pipe(fs.createWriteStream(distPath + librariesFileName + jsExt));
 
 	// Create a bundle with the application, depending on the libraries above

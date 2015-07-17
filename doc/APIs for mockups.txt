@@ -1,0 +1,87 @@
+# Useful APIs for doing mockups in JSFiddle, Plunker, etc.
+
+## http://uinames.com/
+
+http://api.uinames.com
+---
+{
+  "name":"John",
+  "surname":"Doe",
+  "gender":"male",
+  "country":"United States"
+}
+
+http://api.uinames.com/?amount=25
+http://api.uinames.com/?gender=female
+http://api.uinames.com/?country=germany
+    Albania
+    Argentina
+    Australia
+    Austria
+    Azerbaijan
+    Bangladesh
+    Belgium
+    Bosnia and Herzegovina
+    Brazil
+    Canada
+    China
+    Colombia
+    Denmark
+    Egypt
+    England
+    Estonia
+    Finland
+    France
+    Georgia
+    Germany
+    Greece
+    Hungary
+    India
+    Iran
+    Israel
+    Italy
+    Japan
+    Mexico
+    Morocco
+    Netherlands
+    New Zealand
+    Nigeria
+    Poland
+    Portugal
+    Romania
+    Russia
+    Slovenia
+    Spain
+    Sweden
+    Switzerland
+    Turkey
+    Ukraine
+    United States
+    Vietnam
+http://api.uinames.com/?minlen=25
+http://api.uinames.com/?maxlen=75
+
+## http://uifaces.com/api
+
+http://uifaces.com/api/v1/random
+---
+{
+	"username": "calebogden"
+	"image_urls": {
+		"epic": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/128.jpg",
+		"bigger": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/73.jpg",
+		"normal": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/48.jpg",
+		"mini": "https://s3.amazonaws.com/uifaces/faces/twitter/calebogden/24.jpg"
+	}
+}
+
+http://uifaces.com/api/v1/user/:username
+
+## myjson.com
+
+Upload a Json file, it serves it with CORS enabled.
+
+http://myjson.com/api (GET, POST, PUT)
+
+
+

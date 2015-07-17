@@ -14,6 +14,14 @@ There are not much settings either: you have to edit Json files to customize thi
 After a few weeks of using Brackets, I appreciate it a lot: it is much less memory hungry than WebStorm or Eclipse, it is flexible and easy to use.
 I recommend it.
 
+Still, I regret some base editor features are missing and must be fixed with extensions. Among them:
+
+- Jump to matching brace (bracket / parenthesis);
+- Gutter selection of lines;
+- Recall previous searches / replacements;
+- Autofill of search field with text under caret (text has to be selected);
+- Show whitespace / end of lines / indentation guides / right margin;
+- Selection to upper / lower case; and some more.
 
 [1] http://blog.brackets.io/2015/03/02/brackets-1-2-now-available/
 
@@ -40,14 +48,22 @@ Select Lines
 Select lines by clicking / dragging in the gutter.
 https://github.com/talmand/Brackets-Select-Lines
 
-Various Improvements
-Add more information in the status bar, lowercase and uppercase converter, super clipboard, button close all folders in file tree, files search.
-https://github.com/Dammmien/brackets-various-improvements
-
 Display Shortcuts
 Display current keyboard shortcuts in a bottom panel that can be sorted and filtered.
 https://github.com/redmunds/brackets-display-shortcuts
 See also https://github.com/adobe/brackets/wiki/User-Key-Bindings and https://github.com/adobe/brackets/blob/master/src/command/Commands.js to define (or change) your shortcuts.
+
+Go to Matching Bracket
+https://github.com/davidwaterston/goto-matching-bracket
+Instantly locate and place the cursor on the matching bracket to the one under the cursor.
+
+BracketstoIX
+Swiss knife toolset
+http://www.apptoix.com/fr/bracketstoix.html
+
+Rename JavaScript Identifier
+Intelligent renaming of JS variables
+https://github.com/asgerf/bracket-rename
 
 
 #### Support of auto-completion, hinting & linting
@@ -56,20 +72,9 @@ Interactive Linter
 Brings realtime JSHint/JSLint/CoffeeLint reports into Brackets as you work on your code, in form of margin indicators.
 https://github.com/MiguelCastillo/Brackets-InteractiveLinter
 
-JSHint
-Enable JSHint support, which can (should) supercedes JSLint. The latter is a bit too strict about "rules". The former is very flexible.
-https://github.com/cfjedimaster/brackets-jshint
-
-JSCS
-JSCS <http://jscs.info/> support: JSHint supports some code style rules, but they are deprecated in favor of JSCS.
-https://github.com/globexdesigns/brackets-jscs
-
 SCSS Lint
 SCSS lint support.
 https://github.com/chimo/brackets-scss-lint
-
-CSSLint
-https://github.com/cfjedimaster/brackets-csslint
 
 SASSHints
 Autocompletion for SASS/SCSS variables.
@@ -86,6 +91,19 @@ https://github.com/chuyik/brackets-snippets
 Ternific
 JavaScript hinting and refactoring powered by Tern.
 https://github.com/MiguelCastillo/Brackets-Ternific
+
+##### Removed because Interactive Linter supports them anyway
+
+JSHint
+Enable JSHint support, which can (should) supercedes JSLint. The latter is a bit too strict about "rules". The former is very flexible.
+https://github.com/cfjedimaster/brackets-jshint
+
+JSCS
+JSCS <http://jscs.info/> support: JSHint supports some code style rules, but they are deprecated in favor of JSCS.
+https://github.com/globexdesigns/brackets-jscs
+
+CSSLint
+https://github.com/cfjedimaster/brackets-csslint
 
 
 #### Other tools
@@ -120,41 +138,11 @@ https://github.com/drewhamlett/brackets-beautify
 Git
 https://github.com/zaggino/brackets-git
 
-Code Folding
-Provides simple code folding for files edited in brackets. Supports brace folding, tag folding, indent folding and multi-line comment folding.
-https://github.com/thehogfather/brackets-code-folding
+### Removed
+
+Various Improvements
+Add more information in the status bar, lowercase and uppercase converter, super clipboard, button close all folders in file tree, files search.
+https://github.com/Dammmien/brackets-various-improvements
 
 
 
-
-brackets.json
-
-{
-    "debug.showErrorsInStatusBar": false,
-    "useTabChar": true,
-    "jslint.options": {
-        "white": true
-    },
-    "linting.collapsed": false,
-    "linting.enabled": true,
-	"language": {
-		"javascript": {
-			"linting.prefer": [ "JSHint", "JSCS" ],
-			"linting.usePreferredOnly": true
-		}
-	},
-    "dragDropText": true,
-    "styleActiveLine": true,
-    "jwolfe.file-tree-exclude.list": [
-        "node",
-        "node_modules",
-        "bower_components",
-        ".git",
-        ".idea",
-        ".sass-cache",
-        "dist",
-        ".settings",
-        "target"
-    ],
-    "hirse.outline.enabled": true
-}
