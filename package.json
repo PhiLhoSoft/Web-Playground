@@ -18,17 +18,20 @@
 	"devDependencies":
 	{
 		"bower": "^1.4.1",
-		"chai": "^2.1.0",
-		"http-server": "^0.7.3",
-		"istanbul": "~0.3.2",
-		"jshint": "^2.5.10",
-		"mocha": "^1.21.4",
-		"mocha-phantomjs": "^3.5.3",
-		"node-sass": "3.0.0-alpha.0",
-		"opener": "^1.4.0",
-		"phantomjs": "~1.9.16",
+		"babel": "^5.6.10",
+
+		"mocha": "^2.2.4",
+		"chai": "^2.3.0",
 		"sinon": "^1.14.1",
 		"sinon-chai": "^2.7.0",
+		"istanbul": "~0.3.14",
+		"phantomjs": "~1.9.16",
+		"mocha-phantomjs": "^3.5.3",
+
+		"http-server": "^0.7.3",
+		"jshint": "^2.5.10",
+		"node-sass": "3.0.0-alpha.0",
+		"opener": "^1.4.0",
 		"browserify": "^6.0.2",
 		"debowerify": "^1.2.0",
 		"bower-resolve": "^2.2.1",
@@ -48,6 +51,7 @@
 		"alternative-build-css": "node node-sass-run.js",
 		"build-js-lib": "node browserify.js",
 		"build-js": "browserify -t debowerify --external dist/libraries.js --exclude asset/lib/**/*.js src/main/js/App.js -o dist/index.js",
+		"babel": "babel app/index.js --out-file dist/index.js --source-maps",
 
 		"start": "http-server -a localhost -p 8090 .",
 		"go": "opener http://localhost:8090/dist/",
@@ -55,14 +59,14 @@
 
 		"pretest": "npm run lint",
 		"pretestphw": "npm run lint",
-		"test": "mocha --reporter spec",
-		"test-old": "mocha --reporter spec --recursive src/test",
+		"test": "mocha --harmony --reporter spec",
+		"test-old": "mocha --harmony --reporter spec --recursive src/test",
 		"test-browser": "opener src/test/TestBed.html",
 		"//": "Windows-specific path because of https://github.com/joyent/node/issues/5841",
-		"test-ph-wr": "mocha-phantomjs --proxy-type=none --web-security=false --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/RequireTests.html",
-		"test-ph-w": "mocha-phantomjs --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/TestBed.html",
-		"test-ph-u": "mocha-phantomjs --reporter spec -p ./node_modules/phantomjs/bin/phantomjs src/test/TestBed.html",
-		"cover": "istanbul cover node_modules/mocha/bin/_mocha -- --reporter dot --recursive src/test",
+		"test-ph-wr": "mocha-phantomjs --proxy-type=none --web-security=false --harmony --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/RequireTests.html",
+		"test-ph-w": "mocha-phantomjs --harmony --reporter spec -p node_modules/phantomjs/lib/phantom/phantomjs.exe src/test/TestBed.html",
+		"test-ph-u": "mocha-phantomjs --harmony --reporter spec -p ./node_modules/phantomjs/bin/phantomjs src/test/TestBed.html",
+		"cover": "istanbul cover node_modules/mocha/bin/_mocha -- --harmony --reporter dot --recursive src/test",
 		"cover-report": "npm run cover && opener ./coverage/lcov-report/index.html"
 	}
 }

@@ -1,15 +1,16 @@
-List of JavaScript graph libraries
+# List of JavaScript graph libraries
 
-A graph library is able to display of nodes linked by edges.
+A graph library is able to display nodes linked by edges (links).
 
 Important choice criteria are:
 - technology: canvas (bitmap) vs. SVG (vector).
-- look: apparently some libraries can only do "data cloud" style, with (generally) lot of nodes, with radiating links, more or less stable / random; others can add constraints, allowing to display the nodes in "hierarchical" style, eg. aligned for the same level of depth, etc.
-- size (I listed the minimized (uncompressed) file).
-- liveness of the project (last activity since March 31).
+- look: apparently some libraries can only do "data cloud" style, with (generally) lot of nodes, with radiating links, more or less stable / random; others can add constraints, allowing to display the nodes in "hierarchical" style, eg. aligned for the same level of depth, etc. Others are more suited for "flowchart" style drawings.
+- size (I listed the minimized, uncompressed file size).
+- liveness of the project (last activity since March 31, 2015).
 
+## Free / open source
 
-D3.js
+### D3.js
 http://d3js.org/
 https://github.com/mbostock/d3
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
@@ -19,7 +20,7 @@ SVG-based; kind of base graphics library; can display a graph by itself, but als
 min.js is 151.125 KB
 Served as http://d3js.org/d3.v3.min.js, it is 57.9 KB (GZipped)
 
-cola.js
+### cola.js
 http://marvl.infotech.monash.edu/webcola/
 https://github.com/tgdwyer/WebCola
 <script src="http://marvl.infotech.monash.edu/webcola/cola.v3.min.js"></script>
@@ -30,7 +31,7 @@ min.js is 66.218 KB
 Total 217 KB with D3
 Last commit: 31 March 2015
 
-Dagre-D3
+### Dagre-D3
 .
 https://github.com/cpettitt/dagre-d3
 v. 0.4.3
@@ -40,7 +41,7 @@ min.js is 142.093 KB (with graphlib and dagre included)
 Total 293 KB with D3
 Last commit: 31 March 2015 -- author has stopped dev on these (stable) projects but still maintain them
 
-jsPlumb
+### jsPlumb
 http://jsplumbtoolkit.com - https://jsplumbtoolkit.com/demo/flowchart/dom.html
 https://github.com/sporritt/jsplumb/
 v. 1.7.5
@@ -49,13 +50,13 @@ Mixes HTML divs and SVG for connectors
 min.js is 182.577 KB for pure jS, 169.121 KB for jQuery version
 Last commit: 31 March 2015
 
-JoinJS
+### JoinJS
 http://jointjs.com/tutorial
 "JointJS diagramming library lets you create fully interactive diagramming tools"
 SVG-based. JointJS is based on jQuery, Underscore, Backbone and SVG. (feels like a lot...)
 
 
-Cytoscape.js
+### Cytoscape.js
 http://js.cytoscape.org/
 https://github.com/cytoscape/cytoscape.js
 v. 2.3.11
@@ -64,7 +65,7 @@ Canvas-based; has interesting plugins
 min.js is 258.167 KB
 Last commit: 31 March 2015
 
-Sigma
+### Sigma
 http://sigmajs.org/
 https://github.com/jacomyal/sigma.js
 v. 1.0.3
@@ -73,7 +74,7 @@ Canvas-based; has plugins; also has a SVG renderer; oriented "data cloud"
 min.js is 83.468 KB
 Last commit: 1 March 2015
 
-vis.js
+### vis.js
 http://visjs.org/
 https://github.com/almende/vis
 v. 3.11.0
@@ -82,7 +83,7 @@ Canvas-based; oriented "data cloud"
 min.js is 436.594 KB
 Last commit: 12 March 2015
 
-JavaScript InfoVis Toolkit
+### JavaScript InfoVis Toolkit
 http://philogb.github.io/jit/ (http://thejit.org)
 https://github.com/philogb/jit
 v. 2.0.2
@@ -91,7 +92,7 @@ Canvas-based; versatile
 min.js is 159 KB
 Last commit: 1 Jul 2013
 
-Arbor.js
+### Arbor.js
 http://arborjs.org/
 https://github.com/samizdatco/arbor
 v. ?
@@ -100,7 +101,7 @@ Canvas / SVG; oriented "data cloud"
 no min.js; 28 KB
 Last commit: 28 May 2012
 
-Protovis
+### Protovis
 https://github.com/mbostock/protovis
 http://mbostock.github.io/protovis/
 Ancestor of D3, abandoned.
@@ -108,19 +109,19 @@ Ancestor of D3, abandoned.
 
 ## Commercial
 
-Draw2D Touch
+### Draw2D Touch
 http://www.draw2d.org/draw2d/
 http://draw2d.org/draw2d_touch/jsdoc_5/#!/example/connection_router
 SVG-based
 699 € - http://www.draw2d.org/draw2d/commercial.html
 
-yFiles for HTML
+### yFiles for HTML
 http://www.yworks.com/en/products/yfiles/yfiles-for-html/
 http://live.yworks.com/demobrowser/index.html#Organization-Charts
 SVG-based
 http://www.yworks.com/en/products_yfileshtml_commercialinfo_licensetypes.html
 
-GoJS
+### GoJS
 http://gojs.net/latest/index.html
 http://gojs.net/latest/samples/orgChartStatic.html
 Canvas-based

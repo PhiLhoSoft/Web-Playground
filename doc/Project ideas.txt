@@ -1,0 +1,116 @@
+Projects in AngularJS - Learn by building 10 Projects
+Learn professional web development in AngularJS while building ten unique web apps
+Instructed by Eduonix Learning Solutions Development / Web Development
+
+Basic Angular Website
+
+Learn to create Angular Websites and concepts such as two way binding, url routing and directives
+
+Web Template Store
+
+Learn creation of store based Apps with the project. Implement payment using paypal
+
+myContactsApp
+
+A complete CRUD application in Angular JS. Learn the use of Firebase API
+
+ngSocialApp
+
+Learn to use facebook APIs with Angular JS. The App uses facebook's graph API to authenticate the users
+
+Job Directory
+
+A complete MEAN stack project where user can post search and apply for jobs. There will also be login subscription feature.
+
+Knowledgebase
+
+Learn to build an Article repository with nodejs, MongoDB and Angular JS. It will teach you major aspects of both front end and backend programming using JS technologies.
+
+User Authentication App
+
+Learn to build a hybrid app. Learn the use of Sails framework for backend node server. learn professional web development techniques.
+
+Intagram Gallery
+
+Build a full fledged photo gallery application. Learn to integrate Instagram APIs
+
+PubNub Chat
+
+Build a real time chat application. Learn the use of PubNub data streaming API with Angular JS
+
+
+Section 3: Web Template Store
+Get & Display Templates
+Get & Display Templates - Final Steps
+
+Section 4: myContacts App
+Angular Seed & Firebase Setup
+Read & Create Contacts - Basic Design
+Read & Create Contacts - Final Steps
+Edit & Display Single Contact -Design
+Edit & Display Single Contact - Implementation
+
+Section 5: ngSocial Facebook App
+Create Facebook App
+Facebook App UI
+Facebook Login - Initial Design
+Facebook Login - Implementation
+Display User Info & Posts - Implementation Steps
+Display User Info & Posts - Final View
+Posting From ngSocial
+
+Section 6: Job Directory
+Implementing the MEAN Stack
+Backend Job API Setup
+Frontend Controller - Design
+Frontend Controller - Final Implementation
+Frontend Views
+
+Section 7: KnowledgeBase
+NodeJS & MongoDB Setup
+Backend GET Routes - Design
+Backend GET Routes - Implementation
+Backend POST Routes
+Angular Routes & Views
+Angular Routes & Views - Final Steps
+Frontend Data Display - Basic Design
+Frontend Data Display - Final views
+Add, Edit & Delete Articles - Initial Steps
+Add, Edit & Delete Articles - Final Points
+
+Section 8: User Authentication App
+Sails Server Setup
+Frontend Signup
+Backend Signup
+Frontend Login
+Backend Login Controller
+Dashboard Design
+Dashboard Implementation
+Logging Out
+Switching to MongoDB
+
+Section 9: Instagram Gallery
+NodeJS Server
+Controller & View Setup
+Create Instagram Service
+Adding a Lightbox
+
+Section 10: PubNub Chat
+Create App With Yeoman - Initial Steps
+Create App With Yeoman - Implementation
+Join Controller
+Main Controller
+Main Controller - Final implementation
+Adding Page Functionality
+
+Section 11: AutoFind
+MeanJS & Homepage Setup
+Creating the Cars Files - Initial Implementation
+Creating the Cars Files - Heavy Lifting
+Creating the Cars Files - Final Implementation
+Fetch & Displaying Cars - View Design
+Fetch & Displaying Cars - View Implementation
+Add, Update & Delete Cars - Design
+Add, Update & Delete Cars - Implementation
+Car Search Functionality
+
