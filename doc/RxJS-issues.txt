@@ -1,0 +1,3 @@
+- https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/subjects/replaysubject.md
+"[windowSize = NUMBER.MAX_VALUE] (Number): Maximum time length of the replay buffer."
+=> should be Number.MAX_VALUE and should indicate the unit of time (seconds? milliseconds?)

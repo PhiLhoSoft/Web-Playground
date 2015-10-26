@@ -1,9 +1,8 @@
 .settings
-.idea
 .sass-cache
 /coverage
 /dist
 /node
 /node_modules
-/asset/lib
-/asset/css
+/assets/libs
+/assets/css

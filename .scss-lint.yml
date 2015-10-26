@@ -1,6 +1,4 @@
-scss_files: 'src/main/webapp/*.scss'
-
-exclude: 'src/main/webapp//compass/**'
+scss_files: 'src/main/*.scss'
 
 linters:
   Indentation:

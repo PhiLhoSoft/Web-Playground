@@ -50,12 +50,12 @@
 		"build-css": "node-sass --source-comments --source-map=true --output-style nested --include-path src/main/sass --output asset/css src/main/sass/playground.scss",
 		"alternative-build-css": "node node-sass-run.js",
 		"build-js-lib": "node browserify.js",
-		"build-js": "browserify -t debowerify --external dist/libraries.js --exclude asset/lib/**/*.js src/main/js/App.js -o dist/index.js",
+		"build-js": "browserify -t debowerify --external dist/libraries.js --exclude assets/libs/**/*.js src/main/js/App.js -o dist/index.js",
 		"babel": "babel app/index.js --out-file dist/index.js --source-maps",
 
 		"start": "http-server -a localhost -p 8090 .",
 		"go": "opener http://localhost:8090/dist/",
-	    "start-beefy": "beefy dist/index.js 8099 --live --open --  --exclude asset/lib/**/*.js src/main/js/App.js -d",
+	    "start-beefy": "beefy dist/index.js 8099 --live --open --  --exclude assets/libs/**/*.js src/main/js/App.js -d",
 
 		"pretest": "npm run lint",
 		"pretestphw": "npm run lint",
