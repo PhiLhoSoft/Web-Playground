@@ -34,13 +34,13 @@
 		"key-spacing": [ 1, { "beforeColon": false, "afterColon": true } ], // enforce spacing between keys and values in object literal properties
 		"no-irregular-whitespace": 1,     // disallow irregular whitespace outside of strings and comments
 		"no-trailing-spaces": 1,          // disallow trailing whitespace at the end of lines (fixable)
-		"space-after-keywords": 2,        // require a space after certain keywords (fixable)
+		"space-after-keywords": 1,        // require a space after certain keywords (fixable)
 //		"space-before-keywords": [2, "always"], // require a space before certain keywords (fixable)
-		"space-before-blocks": 2,         // require or disallow a space before blocks (fixable)
+		"space-before-blocks": 1,         // require or disallow a space before blocks (fixable)
 		"space-before-function-paren": [ 1, "never" ], // require or disallow a space before function opening parenthesis (fixable)
-		"space-in-parens": [ 2, "never" ], // require or disallow spaces inside parentheses
+		"space-in-parens": [ 1, "never" ], // require or disallow spaces inside parentheses
 		"space-infix-ops": 1,             // require spaces around operators (fixable)
-		"space-return-throw-case": 2,     // require a space after return, throw, and case (fixable)
+		"space-return-throw-case": 1,     // require a space after return, throw, and case (fixable)
 		"spaced-comment": 1,              // require or disallow a space immediately following the // or /* in a comment
 
 		"new-cap": 2,                     // require a capital letter for constructors
@@ -128,9 +128,8 @@
 		"eqeqeq": [ 2, "smart" ],   // require the use of === and !==
 		"no-else-return": 2,        // disallow else after a return in an if (off by default)
 		"no-floating-decimal": 1,   // disallow the use of leading or trailing decimal points in numeric literals (off by default)
-		"no-loop-func": 2,          // disallow creation of functions within loops
-		"no-octal-escape": 1,       // disallow use of octal escape sequences in string literals, such as var foo = "Copyright \251";
-		"no-octal": 1,              // disallow use of octal literals
+		"no-octal-escape": 2,       // disallow use of octal escape sequences in string literals, such as var foo = "Copyright \251";
+		"no-octal": 2,              // disallow use of octal literals
 		"no-redeclare": 2,          // disallow declaring the same variable more than once
 		"no-return-assign": 2,      // disallow use of assignment in return statement
 		"no-unused-expressions": 2, // disallow usage of expressions in statement position
@@ -156,6 +155,7 @@
 		"no-implied-eval": 0,       // disallow use of eval()-like methods
 		"no-iterator": 0,           // disallow usage of __iterator__ property
 		"no-labels": 0,             // disallow use of labeled statements
+		"no-loop-func": 0,          // disallow creation of functions within loops
 		"no-lone-blocks": 0,        // disallow unnecessary nested blocks
 		"no-multi-spaces": 0,       // disallow use of multiple spaces
 		"no-multi-str": 0,          // disallow use of multiline strings
@@ -181,7 +181,7 @@
 		//# Variables #
 
 		"no-shadow-restricted-names": 1,  // disallow shadowing of names such as arguments
-		"no-unused-vars": [ 2, { "args": "none" } ], // disallow declaration of variables that are not used in the code
+		"no-unused-vars": [ 1, { "args": "none" } ], // disallow declaration of variables that are not used in the code
 		"no-undef": 2,                    // disallow use of undeclared variables unless mentioned in a /*global */ block
 
 		"no-catch-shadow": 0,             // disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
