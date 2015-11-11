@@ -1,4 +1,4 @@
-/* jshint -W097 */ "use strict";
+"use strict";
 
 var _ = require('lodash');
 

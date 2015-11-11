@@ -1,48 +1,46 @@
 // Utilities objects and methods
 // Based on https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/
-(function(exports)
+"use strict";
+
+function Cow(name)
 {
-	"use strict";
+	this.name = name || "Anonymous cow";
+}
 
-	function Cow(name)
+Cow.prototype =
+{
+	greets: function (target)
 	{
-		this.name = name || "Anonymous cow";
-	}
-	exports.Cow = Cow;
+		if (!target)
+			throw new Error("Missing target");
+		return this.name + " greets " + target;
+	},
 
-	Cow.prototype =
+	consoleGreets: function (target)
 	{
-		greets: function (target)
+		if (!target)
 		{
-			if (!target)
-				throw new Error("Missing target");
-			return this.name + " greets " + target;
-		},
-
-		consoleGreets: function (target)
-		{
-			if (!target)
-			{
-				console.error("Missing target");
-				return;
-			}
-
-			console.log(this.name + " greets " + target);
-		},
-
-		lateGreets: function (target, cb)
-		{
-			setTimeout(function (self)
-			{
-				try
-				{
-					cb(null, self.greets(target));
-				}
-				catch (err)
-				{
-					cb(err);
-				}
-			}, 1000, this);
+			console.error("Missing target");
+			return;
 		}
-	};
-})(this);
+
+		console.log(this.name + " greets " + target);
+	},
+
+	lateGreets: function (target, cb)
+	{
+		setTimeout(function (self)
+		{
+			try
+			{
+				cb(null, self.greets(target));
+			}
+			catch (err)
+			{
+				cb(err);
+			}
+		}, 1000, this);
+	}
+};
+
+export { Cow };
