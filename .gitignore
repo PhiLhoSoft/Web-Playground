@@ -1,5 +1,6 @@
 .settings
 .sass-cache
+npm-debug.log
 /coverage
 /dist
 /node

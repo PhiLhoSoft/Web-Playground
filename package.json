@@ -7,7 +7,7 @@
 	[
 		{ "name": "You", "email": "you@example.com" }
 	],
-	"keywords": *
+	"keywords":
 	[
 		 "reactive",
 		 "experiment",
@@ -18,7 +18,7 @@
 		"es2015"
 	],
 	"private": false,
-	"license": "http://www.opensource.org/licenses/Zlib",
+	"license": "Zlib",
 	"repository":
 	{
 		"type": "git",
@@ -30,19 +30,9 @@
 	},
 	"homepage": "https://github.com/PhiLhoSoft/Web-Playground#readme",
 	"main": "src/main/html/index.html",
-	"dependencies":
-	{
-		"babel-polyfill": "^6.0.16",
-		"jquery": "^2.1.3",
-		"jquery-ui": "^1.11.4",
-		"bootstrap": "^3.3.4",
-		"fontawesome": "^4.2.0",
-		"lodash": "^3.10.1",
-		"moment": "^2.10.2",
-		"mithril": "^0.2.0"
-	},
 	"devDependencies":
 	{
+		"bower": "latest",
 		"webpack-dev-server": "latest",
 		"webpack": "latest",
 		"babel-core": "latest",
@@ -57,13 +47,13 @@
 		"node-sass": "latest",
 		"sass-loader": "latest",
 
-		"mocha": "^2.3.0",
-		"chai": "^2.3.0",
-		"sinon": "^1.14.1",
-		"sinon-chai": "^2.7.0",
-		"istanbul": "~0.3.14",
-		"phantomjs": "~1.9.16",
-		"mocha-phantomjs": "^3.5.3",
+		"mocha": "^2.3.3",
+		"chai": "^3.4.1",
+		"sinon": "^1.17.1",
+		"sinon-chai": "^2.8.0",
+		"istanbul": "~0.4.0",
+		"phantomjs": "~1.9.18",
+		"mocha-phantomjs": "^4.0.1",
 
 		"http-server": "latest",
 		"eslint": "latest",
