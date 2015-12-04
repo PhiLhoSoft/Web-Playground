@@ -35,10 +35,14 @@
 		"bower": "latest",
 		"webpack-dev-server": "latest",
 		"webpack": "latest",
+		"extract-text-webpack-plugin": "latest",
+
 		"babel-core": "latest",
 		"babel-loader": "latest",
+		"babel-runtime": "latest",
 		"babel-preset-es2015": "latest",
 		"babel-polyfill": "latest",
+		"babel-eslint": "latest",
 
 		"style-loader": "latest",
 		"css-loader": "latest",
@@ -47,16 +51,17 @@
 		"node-sass": "latest",
 		"sass-loader": "latest",
 
-		"mocha": "^2.3.3",
-		"chai": "^3.4.1",
-		"sinon": "^1.17.1",
-		"sinon-chai": "^2.8.0",
-		"istanbul": "~0.4.0",
-		"phantomjs": "~1.9.18",
-		"mocha-phantomjs": "^4.0.1",
+		"eslint-loader": "latest",
+
+		"mocha": "latest",
+		"chai": "latest",
+		"sinon": "latest",
+		"sinon-chai": "latest",
+		"istanbul": "latest",
+		"phantomjs": "latest",
+		"mocha-phantomjs": "latest",
 
 		"http-server": "latest",
-		"eslint": "latest",
 		"node-sass": "latest",
 		"opener": "latest"
 	},

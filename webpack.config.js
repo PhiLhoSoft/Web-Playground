@@ -1,50 +1,103 @@
 var path = require("path");
 var webpack = require("webpack");
-var autoprefixer = require('autoprefixer');
+var autoprefixer = require("autoprefixer");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-module.exports =
+var port = process.env.PORT || 8080;
+
+function buildOptions(inProduction)
 {
-	// Files to run at startup
-	entry:
+	var entries =
 	[
 		"babel-polyfill", // Use Babel's polyfill
-		"./src/main/sass/main.scss", // then the CSS
-		"./src/main", // then the application
-		"webpack-dev-server/client?http://localhost:8080" // Auto-reload on changes
+		"./src/dist/main.css", // then the CSS
+		"./src/dist/index.html" // then the application
 	],
-	// Where to put compiled files
-	output:
+	if (!inProduction)
 	{
-		// At root of project
-		publicPath: "/",
-		// Create a unique main.js file for the whole application
-		filename: "main.js"
-	},
-	devtool: "source-map",
-	module:
+		entries.unshift(
+			"webpack-dev-server/client?http://localhost:" + port, // Auto-reload on changes
+			"webpack/hot/only-dev-server"
+		);
+	}
+
+	var plugins =
+	[
+		new webpack.EnvironmentPlugin('NODE_ENV')
+	];
+	if (!inProduction)
 	{
-		loaders:
-		[
-			{
-				test:   /\.scss$/,
-//~ 				loader: "style-loader!css-loader!postcss-loader!sass"
-				loaders: [ "style", "css?sourceMap", "postcss?sourceMap", "sass?sourceMap" ]
-			},
-			{
-				test: /\.js$/,
-				include: path.join(__dirname, "src"),
-				loader: "babel-loader",
-				query:
+		plugins.unshift(new webpack.HotModuleReplacementPlugin());
+	}
+	else
+	{
+		plugins.push(
+			new webpack.NoErrorsPlugin(),
+			new webpack.optimize.DedupePlugin(),
+			new webpack.optimize.UglifyJsPlugin()
+		);
+	}
+
+	return {
+		context: path.join(__dirname, "src"),
+		// Files to run at startup
+		entry: entries,
+		resolve:
+		{
+			modulesDirectories: [ "node_modules", "bower_components" ]
+		},
+		// Where to put compiled files
+		output:
+		{
+			// At root of project
+			publicPath: "/dist",
+//~ 			path: path.resolve("./dist"),
+			// Create a unique main.js file for the whole application
+			filename: "main.js",
+			libraryTarget: 'umd'
+		},
+		devtool: "source-map",
+		module:
+		{
+			loaders:
+			[
 				{
-					presets: [ "es2015" ],
+					test:   /\.scss$/,
+//~ 					loader: "style-loader!css-loader!postcss-loader!sass"
+					loaders: [ "style", "css?sourceMap", "postcss?sourceMap", "sass?sourceMap" ]
+//~ 					loaders:
+//~ 					[
+//~ 						"style-loader",
+//~ 						"css-loader?modules&importLoaders=2&localIdentName=[name]__[local]___[hash:base64:5]",
+//~ 						'autoprefixer-loader?{ browsers: [ "last 2 versions", "ie >= 10" ] }',
+//~ 						"sass-loader"
+//~ 					]
+				},
+				{
+					test: /\.js$/,
+					include: path.join(__dirname, "src"),
+					exclude: /node_modules|bower_components/,
+					loader: "babel-loader?optional[]=runtime&stage=0",
+					query:
+					{
+						presets: [ "es2015" ],
+					},
+				},
+				{
+					test: /\.js$/,
+					loader: "eslint-loader",
+					exclude: /node_modules|bower_components/
 				}
-			}
-		]
-	},
-	postcss: [ autoprefixer({ browsers: [ "last 2 versions" ] }) ],
-	devServer:
-	{
-		contentBase: "./src"
-	},
-	debug: true
+			]
+		},
+		postcss: [ autoprefixer({ browsers: [ "last 2 versions", "ie >= 10" ] ] }) ],
+		plugins: plugins,
+		devServer:
+		{
+			contentBase: "./src"
+		},
+		debug: !inProduction
+	};
 };
+
+module.exports = buildOptions(process.env.NODE_ENV === 'production');

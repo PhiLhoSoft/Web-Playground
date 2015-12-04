@@ -1,0 +1,9 @@
+# Hexo Test
+
+hexo init HexoTest
+cd HexoTest
+npm install
+npm un hexo-renderer-marked hexo-renderer-stylus hexo-renderer-ejs --save
+npm i hexo-renderer-markdown-it --save
+npm i hexo-renderer-bourbon --save
+npm i hexo-autoprefixer --save
