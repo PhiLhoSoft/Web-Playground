@@ -1,3 +1,8 @@
+title: Adobe Brackets revew
+description: a review of the Brackets IDE for the Web, at version 1.5
+date: 2015-09-25 13:24:00
+---
+
 # Adobe Brackets - IDE for the Web
 
 Integrated Development Environment oriented toward the Web technologies
@@ -6,16 +11,16 @@ http://brackets.io/
 
 ## Quick review
 
-I installed Brackets (v. 1.2 on Windows 7 with 8 GB of memory; currently at v.1.4), it went out quite smoothly, just asking for the directory where to install it.<br>
-I opened it, it starts very fast.<br>
-It has a dark UI but a light editing area. Not fan of dark theme, but I will try and keep it to see if it is effective to have a contrast between the UI and the editing area.<br>
-Default syntax coloring theme looks OK so far. It can be changed with theme plugins.<br>
-Actually, the UI theme cannot be changed easily, it needs a plugin to be able to modify it.<br>
+I installed Brackets (v. 1.2 on Windows 7 with 8 GB of memory; currently at v.1.4), it went out quite smoothly, just asking for the directory where to install it.
+I opened it, it starts very fast.
+It has a dark UI but a light editing area. Not fan of dark theme, but I will try and keep it to see if it is effective to have a contrast between the UI and the editing area.
+Default syntax coloring theme looks OK so far. It can be changed with theme plugins.
+Actually, the UI theme cannot be changed easily, it needs a plugin to be able to modify it.
 There is no drag'n'drop of text by default, which is why I rejected this editor on my first try (before 1.0), because I use this operation a lot; but it has been introduced in this version, and the [blog post about this release](http://blog.brackets.io/2015/03/02/brackets-1-2-now-available/) shows how to activate it.
-The editor is a bit primitive out of the box. You have to install several extensions to get things done efficiently... That's OK because this keeps the application streamlined: no need to install CoffeeScript or Less extensions if you code only in JavaScript and use Sass...<br>
+The editor is a bit primitive out of the box. You have to install several extensions to get things done efficiently... That's OK because this keeps the application streamlined: no need to install CoffeeScript or Less extensions if you code only in JavaScript and use Sass...
 There are not much settings either: you have to edit Json files to customize things. A bit less intuitive, but I am OK with that, as that's the way I customize ScITE, my favorite (general purpose) source code editor. And not having complex dialogs to set every option also keeps the application light.
 
-After a few weeks of using Brackets, I appreciate it a lot: it is much less memory hungry than WebStorm or Eclipse, it is flexible and easy to use.<br>
+After a few weeks of using Brackets, I appreciate it a lot: it is much less memory hungry than WebStorm or Eclipse, it is flexible and easy to use.
 I recommend it.
 
 Still, I regret some base editor features are missing and must be fixed with extensions. Among them:
@@ -27,7 +32,7 @@ Still, I regret some base editor features are missing and must be fixed with ext
 - Show whitespace / end of lines / indentation guides / right margin;
 - Selection to upper / lower case; and some more.
 
-Some of these features has been addressed by adding extensions, but I feel these should be native.<br>
+Some of these features has been addressed by adding extensions, but I feel these should be native.
 I will list here a number of these extensions I found useful.
 
 I give the links to the GitHub projects, but the best way to install these extensions is to go to the Extension Manager in Brackets, to type (paste) the name of the extension and to install it from there. The manager also checks for updated and allows to install them easily.

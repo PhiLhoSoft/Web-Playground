@@ -1,4 +1,9 @@
-WebStorm review
+title: JetBrains WebStorm review
+description: a review of the WebStorm IDE for Web applications, at version 9
+date: 2015-03-02 11:42:00
+---
+
+# JetBrains WebStorm review
 
 For Java coding, I elected Eclipse as my main IDE. I tried NetBeans, and appreciated it, but at the time, it was Java-centric so I went back to Eclipse instead, more polyglot. Now, NetBeans is more versatile, but now I know Eclipse well, with its quirks, warts and all, so I remain there.
 When I had to code JavaScript (with AngularJS, how original!) at work, for a new project, I naturally tried to use Eclipse, with an Angular plugin. It wasn't so bad, but still a bit frustrating, with no renaming of local variables, loosing the capability to drag'n'drop code in CSS or HTML editors (a long-standing bug...), and some other frustrations.
