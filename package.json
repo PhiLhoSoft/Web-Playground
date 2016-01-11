@@ -9,8 +9,8 @@
 	],
 	"keywords":
 	[
-		 "reactive",
-		 "experiment",
+		"reactive",
+		"experiment",
 		"js",
 		"frameworks",
 		"libraries",
@@ -30,11 +30,20 @@
 	},
 	"homepage": "https://github.com/PhiLhoSoft/Web-Playground#readme",
 	"main": "src/main/html/index.html",
+	"dependencies":
+	{
+		"jquery": "^2.1.4",
+		"jquery-ui": "^1.10.5",
+		"bootstrap": "^3.3.4",
+		"lodash": "^3.10.1",
+		"moment": "^2.10.2",
+		"mithril": "^0.2.0",
+		"babel-polyfill": "^6.3.14"
+	},
 	"devDependencies":
 	{
-		"bower": "latest",
-		"webpack-dev-server": "latest",
 		"webpack": "latest",
+		"webpack-dev-server": "latest",
 		"extract-text-webpack-plugin": "latest",
 
 		"babel-core": "latest",
@@ -48,21 +57,15 @@
 		"css-loader": "latest",
 		"postcss-loader": "latest",
 		"autoprefixer-loader": "latest",
-		"node-sass": "latest",
-		"sass-loader": "latest",
 
+		"eslint": "latest",
 		"eslint-loader": "latest",
 
-		"mocha": "latest",
-		"chai": "latest",
-		"sinon": "latest",
-		"sinon-chai": "latest",
+		"ava": "latest",
+		"expect": "latest",
 		"istanbul": "latest",
-		"phantomjs": "latest",
-		"mocha-phantomjs": "latest",
 
 		"http-server": "latest",
-		"node-sass": "latest",
 		"opener": "latest"
 	},
 	"scripts":
@@ -70,23 +73,18 @@
 		"//": "Using Unix commands (rm, cp). On Windows, get UnxUtils or GnuWin32. Well worth it, anyway. Git's bins can do the job, too.",
 		"clean": "rm -rf dist/*",
 		"lint": "eslint src/main/js/",
+		"lintcss": "stylelint --config .stylelintrc.yaml -s scss src/main/sass/*",
 
 		"prebuild": "npm run clean",
-		"build": "npm run build-css && npm run build-js-lib && npm run build-js",
+		"build": "",
 		"postbuild": "cp src/main/html/index.html dist/",
-		"build-css": "node-sass --source-comments --source-map=true --output-style nested --include-path src/main/sass --output asset/css src/main/sass/playground.scss",
-		"alternative-build-css": "node node-sass-run.js",
-		"build-js-lib": "node browserify.js",
-		"build-js": "browserify -t debowerify --external dist/libraries.js --exclude assets/libs/**/*.js src/main/js/App.js -o dist/index.js",
 		"babel": "babel app/index.js --out-file dist/index.js --source-maps",
 
 		"start": "node_modules/webpack-dev-server/bin/webpack-dev-server.js",
 		"startO": "http-server -a localhost -p 8090 .",
 		"go": "opener http://localhost:8090/dist/",
-	    "start-beefy": "beefy dist/index.js 8099 --live --open --  --exclude assets/libs/**/*.js src/main/js/App.js -d",
 
 		"pretest": "npm run lint",
-		"pretestphw": "npm run lint",
 		"test": "mocha --harmony --reporter spec",
 		"test-old": "mocha --harmony --reporter spec --recursive src/test",
 		"test-browser": "opener src/test/TestBed.html",
