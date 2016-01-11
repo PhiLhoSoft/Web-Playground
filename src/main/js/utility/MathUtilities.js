@@ -1,12 +1,13 @@
-'use strict';
+import Helpers from "utility/Helpers.js";
 
 var MathUtilities = {};
 
 MathUtilities.Constant = Helpers.createEnum(
-{
-	MILLISECONDS_IN_MINUTES: 60 * 1000,
-	MILLISECONDS_IN_HOURS: 60 * 60 * 1000
-});
+	{
+		MILLISECONDS_IN_MINUTES: 60 * 1000,
+		MILLISECONDS_IN_HOURS: 60 * 60 * 1000
+	}
+);
 
 MathUtilities._w = Date.now();
 MathUtilities._initialZ = 2169981296321; // Arbitrary large value (some date in 2038...)
@@ -19,7 +20,7 @@ MathUtilities._z = MathUtilities._initialZ;
  * @return a number between 0 (inclusive) and 1 (exclusive)
  */
 // Based on http://en.wikipedia.org/wiki/Random_number_generation#Computational_methods
-MathUtilities.random = function(seed)
+MathUtilities.random = function (seed)
 {
 	if (seed !== undefined)
 	{
@@ -29,9 +30,11 @@ MathUtilities.random = function(seed)
 	var mask = 0xFFFFFFFF;
 	var z = MathUtilities._z;
 	var w = MathUtilities._w & mask;
+	/* eslint-disable no-extra-parens */
 	MathUtilities._z = (36969 * (z & 0xFFFF) + (z >> 16)) & mask;
 	MathUtilities._w = (18000 * (w & 0xFFFF) + (w >> 16)) & mask;
 	var result = ((z << 16) + w) & mask;
+	/* eslint-ensable no-extra-parens */
 	result /= mask + 1;
 	return result + 0.5;
 };
@@ -44,7 +47,7 @@ MathUtilities.random = function(seed)
 * @param {number} seed - initial seed
 * @return a number between min and max
 */
-MathUtilities.boundedRandom = function(min, max, seed)
+MathUtilities.boundedRandom = function (min, max, seed)
 {
 	var rnd = MathUtilities.random(seed);
 	return min + (max - min) * rnd;
@@ -55,10 +58,10 @@ MathUtilities.boundedRandom = function(min, max, seed)
  * @param {number} timestamp - timestamp in milliseconds
  * @return a new timestamp
  */
-MathUtilities.truncateToOClock = function(timestamp)
+MathUtilities.truncateToOClock = function (timestamp)
 {
-	return Math.floor(timestamp / MathUtilities.Constant.MILLISECONDS_IN_HOURS) * MathUtilities.Constant.MILLISECONDS_IN_HOURS;
+	const msih = MathUtilities.Constant.MILLISECONDS_IN_HOURS;
+	return Math.floor(timestamp / msih) * msih;
 };
 
 export { MathUtilities };
-

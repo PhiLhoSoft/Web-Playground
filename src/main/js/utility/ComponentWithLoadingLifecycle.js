@@ -1,4 +1,4 @@
-'use strict';
+import Helpers from "utility/Helpers.js";
 
 var State = Helpers.createEnum('DISABLED', 'LOADING', 'LOADED', 'EMPTY');
 
@@ -10,13 +10,14 @@ function isStateValid(state)
 function ComponentWithLoadingLifecycle(configuration)
 {
 	_.defaults(configuration,
-	{
-		state: State.LOADING,
-		loading: "Loading...",
-		select: "Select an option",
-		empty: "Empty",
-		disabled: "-"
-	});
+		{
+			state: State.LOADING,
+			loading: "Loading...",
+			select: "Select an option",
+			empty: "Empty",
+			disabled: "-"
+		}
+	);
 	this._configuration =
 	{
 		loadingMessage: configuration.loading,
@@ -28,14 +29,14 @@ function ComponentWithLoadingLifecycle(configuration)
 	this.size = 0;
 }
 
-ComponentWithLoadingLifecycle.prototype._updateMessage = function()
+ComponentWithLoadingLifecycle.prototype._updateMessage = function ()
 {
 	switch (this.state)
 	{
-		case State.LOADING: return this._loadingMessage;
-		case State.LOADED: return this._loadedMessage;
-		case State.EMPTY: return this._emptyMessage;
-		case State.DISABLED: return this._disabledMessage;
+	case State.LOADING: return this._loadingMessage;
+	case State.LOADED: return this._loadedMessage;
+	case State.EMPTY: return this._emptyMessage;
+	case State.DISABLED: return this._disabledMessage;
 	}
 };
 
@@ -45,10 +46,10 @@ ComponentWithLoadingLifecycle.State = State;
  * Sets the new state, and update the message and the boolean flags accordingly.
  * @param {State} state - the new state
  */
-ComponentWithLoadingLifecycle.prototype.setState = function(state)
+ComponentWithLoadingLifecycle.prototype.setState = function (state)
 {
 	if (!isStateValid(state))
-		throw new Error("Invalid state '" + state + "'");
+		throw new Error(`Invalid state ' ${state}'`);
 
 	// Real public properties.
 	this.state = state;
@@ -63,7 +64,7 @@ ComponentWithLoadingLifecycle.prototype.setState = function(state)
  * Tells the model the size of the data (number of elements) in the component.
  * Mostly to allow it to see if it is empty.
  */
-ComponentWithLoadingLifecycle.prototype.setSize = function(size)
+ComponentWithLoadingLifecycle.prototype.setSize = function (size)
 {
 	this.size = size;
 	if (size === 0)
@@ -96,7 +97,7 @@ ComponentWithLoadingLifecycle.prototype.setSize = function(size)
  *   @param {boolean} isEmpty - true if state is EMPTY
  *   @param {number} size - given number of elements in the component
  */
-ComponentWithLoadingLifecycle.create = function(configuration)
+ComponentWithLoadingLifecycle.create = function (configuration)
 {
 	var conf = {};
 	if (_.isObject(configuration))
@@ -107,4 +108,3 @@ ComponentWithLoadingLifecycle.create = function(configuration)
 };
 
 export { ComponentWithLoadingLifecycle };
-

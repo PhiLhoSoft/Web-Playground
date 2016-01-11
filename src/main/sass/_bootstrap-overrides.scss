@@ -1,13 +1,19 @@
 /*  Add this file AFTER bootstrap css */
 
-$header-text-hover : $pls-blue-light;
-$header-text : $pls-blue;
-$header-text-selected : white;
+$header-text-hover: $pls-blue-light;
+$header-text: $pls-blue;
+$header-text-selected: white;
 
-$header-background-active-color : $pls-green;
-$header-background-color : white;
+$header-background-active-color: $pls-green;
+$header-background-color: white;
 
-.nav a, .pagination a, .carousel a, .panel-title a { cursor: pointer; }
+.nav a,
+.pagination a,
+.carousel a,
+.panel-title a
+{
+	cursor: pointer;
+}
 
 .navbar
 {
@@ -33,11 +39,6 @@ $header-background-color : white;
 			color: $header-text-hover;
 		}
 
-		> li > a:focus
-		{
-		}
-
-
 		> li.active > a
 		{
 			color: $header-text-selected;
@@ -46,19 +47,21 @@ $header-background-color : white;
 
 		> li.active > a:hover
 		{
-			color : $header-text-selected;
+			color: $header-text-selected;
 			background-color: $header-background-active-color;
 		}
 
 		> li.active > a:focus
 		{
-			color : $header-text-selected;
+			color: $header-text-selected;
 			background-color: $header-background-active-color;
 		}
 	}
 
 	background-color: $header-background-color;
-	box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+	box-shadow:
+		0 0 4px rgba(0, 0, 0, 0.14),
+		0 4px 8px rgba(0, 0, 0, 0.28);
 	border: 0;
 	border-radius: 0;
 	position: fixed;

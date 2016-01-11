@@ -4,7 +4,7 @@
 
 
 $textfield-error-background: $pls-warning-color;
-$error-color: #b94a48;
+$error-color: #B94A48;
 $warning-background: $pls-warning-color;
 $warning-color: #55A;
 
@@ -75,7 +75,8 @@ $button-color-disabled: $medium-gray;
 		margin: 5px;
 		line-height: $text-box-line-height;
 	}
-	input[type="text"], select
+	input[type="text"],
+	select
 	{
 		width: $form-textfield-width;
 	}

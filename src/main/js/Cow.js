@@ -1,6 +1,5 @@
 // Utilities objects and methods
 // Based on https://nicolas.perriault.net/code/2013/testing-frontend-javascript-code-using-mocha-chai-and-sinon/
-"use strict";
 
 function Cow(name)
 {
@@ -9,14 +8,14 @@ function Cow(name)
 
 Cow.prototype =
 {
-	greets: function (target)
+	greets(target)
 	{
 		if (!target)
 			throw new Error("Missing target");
-		return this.name + " greets " + target;
+		return `${this.name} greets ${target}`;
 	},
 
-	consoleGreets: function (target)
+	consoleGreets(target)
 	{
 		if (!target)
 		{
@@ -24,12 +23,12 @@ Cow.prototype =
 			return;
 		}
 
-		console.log(this.name + " greets " + target);
+		console.log(`${this.name} greets ${target}`);
 	},
 
-	lateGreets: function (target, cb)
+	lateGreets(target, cb)
 	{
-		setTimeout(function (self)
+		setTimeout(self =>
 		{
 			try
 			{

@@ -1,30 +1,5 @@
 // PhiLhoSoft's base Sass styles
 
-@mixin border-radius($radius)
-{
-	-webkit-border-radius: $radius;
-	-moz-border-radius: $radius;
-	-ms-border-radius: $radius;
-	-o-border-radius: $radius;
-	border-radius: $radius;
-}
-@mixin box-shadow($shadow)
-{
-	-webkit-box-shadow: $shadow;
-	-moz-box-shadow: $shadow;
-	-ms-box-shadow: $shadow;
-	-o-box-shadow: $shadow;
-	box-shadow: $shadow;
-}
-@mixin transition($transition)
-{
-	-webkit-transition: $transition;
-	-moz-transition: $transition;
-	-ms-transition: $transition;
-	-o-transition: $transition;
-	transition: $transition;
-}
-
 $base-font: OpenSans, Verdana, sans-serif;
 $font-color: #333;
 $font-color-dark: black;
@@ -37,7 +12,7 @@ $very-dark-gray: #555; // for borders
 
 $pls-orange: #E48923;
 
-$pls-green: #84bd00;
+$pls-green: #84BD00;
 $pls-green-light: #9DCA33;
 $pls-green-very-light: #C2DE80;
 $pls-blue: rgb(0, 97, 127);
@@ -55,7 +30,10 @@ body
 	line-height: normal;
 }
 
-h1, h2, h3, h4
+h1,
+h2,
+h3,
+h4
 {
 	color: $pls-blue;
 }

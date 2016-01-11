@@ -6,6 +6,7 @@
 // Note: BoldItalic and LightItalic variants are not included here.
 // If these combinations are needed, they should be added here, otherwise the browser will use oblique instead of proper italic.
 
+/* stylelint-disable function-url-quotes  */
 @mixin font-face($family, $font-path, $file-name, $weight, $style)
 {
 	$file-path: $font-path + $file-name;
@@ -13,18 +14,20 @@
 	{
 		font-family: "#{$family}";
 		src: url($file-path + ".eot");
-		src: url($file-path + ".eot?#iefix") format('embedded-opentype'),
-			 url($file-path + ".woff") format('woff'),
-			 url($file-path + ".ttf")  format('truetype'); // I skip the SVG format...
+		src:
+			url($file-path + ".eot?#iefix") format("embedded-opentype"),
+			url($file-path + ".woff") format("woff"),
+			url($file-path + ".ttf")  format("truetype"); // I skip the SVG format...
 		font-weight: #{$weight};
 		font-style: #{$style};
 	}
 }
+/* stylelint-enable */
 
-$font-path: '../font/';
-$font-name: 'OpenSans';
+$font-path: "../font/";
+$font-name: "OpenSans";
 
-@include font-face($font-name, $font-path, 'OpenSans-Light', '300', 'normal');
-@include font-face($font-name, $font-path, 'OpenSans-Italic', 'normal', 'italic');
-@include font-face($font-name, $font-path, 'OpenSans-Bold', 'bold', 'normal');
-@include font-face($font-name, $font-path, 'OpenSans-Regular', 'normal', 'normal');
+@include font-face($font-name, $font-path, "OpenSans-Light", "300", "normal");
+@include font-face($font-name, $font-path, "OpenSans-Italic", "normal", "italic");
+@include font-face($font-name, $font-path, "OpenSans-Bold", "bold", "normal");
+@include font-face($font-name, $font-path, "OpenSans-Regular", "normal", "normal");
