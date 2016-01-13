@@ -3,6 +3,7 @@
 env:
   browser: true  # browser global variables.
   es6: true      # enable all ECMAScript 6 features except for modules.
+  jquery: true   # jQuery global variables.
 
   node: false           # Node.js global variables and Node.js scoping.
   commonjs: false       # CommonJS global variables and CommonJS scoping (use this for browser-only code that uses Browserify/WebPack).
@@ -14,7 +15,6 @@ env:
   phantomjs: false      # PhantomJS global variables.
   protractor: false     # Protractor global variables.
   qunit: false          # QUnit global variables.
-  jquery: false         # jQuery global variables.
   prototypejs: false    # Prototype.js global variables.
   shelljs: false        # ShellJS global variables.
   meteor: false         # Meteor global variables.
@@ -25,8 +25,7 @@ env:
   embertest: false      # Ember test helper globals.
   webextensions: false  # WebExtensions globals.
 
-globals:
-  $: false       # jQuery
+globals: # false means: read-only
   _: false       # Lodash (or Underscore)
   moment: false  # Moment.js
 
@@ -228,19 +227,19 @@ rules:
 
   # Variables #
 
+  no-undef: 2                    # disallow use of undeclared variables unless mentioned in a /*global */ block
   no-shadow-restricted-names: 1  # disallow shadowing of names such as arguments
   no-unused-vars:                # disallow declaration of variables that are not used in the code
     - 1
     -
       args: "none"
-  no-undef: 2                # disallow use of undeclared variables unless mentioned in a /*global */ block
+  no-undef-init: 1           # disallow use of undefined when initializing variables
 
   init-declarations: 0       # enforce or disallow variable initializations at definition
   no-catch-shadow: 0         # disallow the catch clause parameter name being the same as a variable in the outer scope (off by default in the node environment)
   no-delete-var: 0           # disallow deletion of variables
   no-label-var: 0            # disallow labels that share a name with a variable
   no-shadow: 0               # disallow declaration of variables already declared in the outer scope
-  no-undef-init: 0           # disallow use of undefined when initializing variables
   no-undefined: 0            # disallow use of undefined variable (off by default)
   no-use-before-define: 0    # disallow use of variables before they are defined
 
