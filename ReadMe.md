@@ -21,3 +21,6 @@ I will try and use Babel / ES2015, too. Thus, I want to use ES6's requires, etc.
 Also dropping JSHint in favor of ESLint.
 
 The whole project has to be updated!
+
+2016-04-24: Starting over with Webpack, following the tutorial http://blog.tighten.co/unpacking-webpack
+

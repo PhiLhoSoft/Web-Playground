@@ -1,0 +1,8 @@
+extends: ../../../.eslintrc.yaml
+
+env:
+  browser: false  # browser global variables.
+
+globals: # false means: read-only
+  module: false
+  inject: false

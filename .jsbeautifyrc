@@ -1,0 +1,32 @@
+{
+	"html":
+	{
+		"brace_style": "collapse",
+		"indent_with_tabs": true,
+		"indent_char": " ",
+		"indent_size": 4,
+		"indent_scripts": "normal",
+		"max_preserve_newlines": 1,
+		"preserve_newlines": true,
+		"unformatted": [ "a", "sub", "sup", "b", "i", "u" ],
+		"wrap_line_length": 0
+	},
+	"css":
+	{
+		"indent_with_tabs": true,
+		"indent_char": " ",
+		"indent_size": 4
+	},
+	"js":
+	{
+		"indent_with_tabs": false,
+		"indent_size": 4,
+		"indent_char": " ",
+		"indent_level": 0,
+		"preserve_newlines": true,
+		"max_preserve_newlines": 2,
+		"space_after_anon_function": true,
+		"brace_style": "collapse"
+		"jslint_happy": true
+	}
+}

@@ -35,15 +35,15 @@ rules:
 
   indent:                       # specify tab or space width for your code (fixable)
     - 2
-    - "tab"
+    - tab
   no-mixed-spaces-and-tabs: 2   # disallow mixed spaces and tabs for indentation (recommended)
   linebreak-style:              # disallow mixed 'LF' and 'CRLF' as linebreaks
     - 2
-    - "unix"
+    - unix
   eol-last: 1                   # enforce newline at the end of file, with no multiple empty lines (fixable)
   semi:                         # require or disallow use of semicolons instead of ASI (fixable)
     - 2
-    - "always"
+    - always
   comma-spacing:                # enforce spacing before and after comma
     - 1
     -
@@ -54,20 +54,34 @@ rules:
     -
       beforeColon: false
       afterColon: true
+  brace-style:                  # enforce one true brace style
+    - 1
+    - allman
+    - allowSingleLine: true # See https://github.com/eslint/eslint/issues/5197
+  block-spacing:                # disallow or enforce spaces inside of single line blocks (fixable)
+    - 1
+    - always
+  padded-blocks:                # enforce padding within blocks
+    - 1
+    - never
   no-irregular-whitespace: 1    # disallow irregular whitespace outside of strings and comments
   no-trailing-spaces: 1         # disallow trailing whitespace at the end of lines (fixable)
-  space-before-keywords: 1      # require a space before certain keywords (fixable)
-  # Broken: wants space after keywords followed by newlines (try / catch, else, etc.).
-  space-after-keywords: 0       # require a space after certain keywords (fixable)
+  keyword-spacing: 1            # enforce spacing before and after keywords (fixable)
   space-before-blocks: 1        # require or disallow a space before blocks (fixable)
   space-before-function-paren:  # require or disallow a space before function opening parenthesis (fixable)
     - 1
     -
-      anonymous: "always"
-      named: "never"
+      anonymous: always
+      named: never
   space-in-parens:              # require or disallow spaces inside parentheses
     - 1
-    - "never"
+    - never
+  object-curly-spacing:         # require or disallow padding inside curly braces (fixable)
+    - 1
+    - always
+  array-bracket-spacing:        # enforce spacing inside array brackets (fixable)
+    - 1
+    - always
   space-infix-ops: 1            # require spaces around operators (fixable)
   space-return-throw-case: 1    # require a space after return, throw, and case (fixable)
   spaced-comment: 1             # require or disallow a space immediately following the # or /* in a comment
@@ -82,14 +96,11 @@ rules:
     - 5
   max-statements:               # specify the maximum number of statement allowed in a function
     - 1
-    - 25
+    - 42
 
   new-cap: 2                    # require a capital letter for constructors
   new-parens: 2                 # disallow the omission of parentheses when invoking a constructor with no arguments
 
-  array-bracket-spacing: 0      # enforce spacing inside array brackets (fixable)
-  block-spacing: 0              # disallow or enforce spaces inside of single line blocks (fixable)
-  brace-style: 0                # enforce one true brace style
   camelcase: 0                  # require camel case names
   comma-style: 0                # enforce one true comma style
   computed-property-spacing: 0  # require or disallow padding inside computed properties (fixable)
@@ -117,11 +128,9 @@ rules:
   no-ternary: 0                 # disallow the use of ternary operators
   no-underscore-dangle: 0       # disallow dangling underscores in identifiers
   no-unneeded-ternary: 0        # disallow the use of ternary operators when a simpler alternative exists
-  object-curly-spacing: 0       # require or disallow padding inside curly braces (fixable)
   one-var: 0                    # require or disallow one variable declaration per function
   operator-assignment: 0        # require assignment operator shorthand where possible or prohibit it entirely
   operator-linebreak: 0         # enforce operators to be placed before or after line breaks
-  padded-blocks: 0              # enforce padding within blocks
   quotes: 0                     # specify whether backticks, double or single quotes should be used (fixable)
   quote-props: 0                # require quotes around object literal property names
   require-jsdoc: 0              # Require JSDoc comment
@@ -167,7 +176,7 @@ rules:
   curly: 0                  # specify curly brace conventions for all control statements
   eqeqeq:                   # require the use of === and !==
     - 2
-    - "smart"
+    - smart
   no-case-declarations: 2   # disallow lexical declarations in case clauses
   no-else-return: 2         # disallow else after a return in an if (off by default)
   no-floating-decimal: 1    # disallow the use of leading or trailing decimal points in numeric literals (off by default)
@@ -232,7 +241,7 @@ rules:
   no-unused-vars:                # disallow declaration of variables that are not used in the code
     - 1
     -
-      args: "none"
+      args: none
   no-undef-init: 1           # disallow use of undefined when initializing variables
 
   init-declarations: 0       # enforce or disallow variable initializations at definition
@@ -247,7 +256,7 @@ rules:
 
   strict: # controls location of Use Strict Directives
     - 2
-    - "function"
+    - function
 
   # Node.js and CommonJS #
 
