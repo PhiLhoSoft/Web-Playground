@@ -24,7 +24,8 @@ List of libraries (frameworks) on CDNs or similar
 <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/js/standalone/selectize.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.css" rel="stylesheet">
 # jsPlumb
-<script src="https://jsplumb.org/js/dom.jsPlumb-1.7.5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all-min.js"></script>
+<script src="https://jsplumbtoolkit.com/lib/jsPlumb-2.0.7-min.js"></script>
 # WebCoLa
 <script src="http://marvl.infotech.monash.edu/webcola/cola.v3.js"></script>
 # jQuery-scrollbar

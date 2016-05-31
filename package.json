@@ -1,7 +1,7 @@
 {
 	"name": "philhosoft-js-playground",
-	"version": "0.2.0",
-	"description": "Playground Web Application: playing with JS frameworks / libraries",
+	"version": "0.3.0",
+	"description": "Playground Web Application: playing with JS frameworks / libraries / tools",
 	"author": "PhiLho <PhiLho(a)GMX.net>",
 	"contributors":
 	[
@@ -32,12 +32,11 @@
 	"main": "src/main/html/index.html",
 	"dependencies":
 	{
-		"jquery": "^2.1.4",
-		"jquery-ui": "^1.10.5",
+		"jquery": "^2.2.3",
+		"jquery-ui": "github:jquery/jquery-ui#1.11.4",
 		"bootstrap": "^3.3.4",
-		"lodash": "^3.10.1",
+		"lodash": "^4.11.1",
 		"moment": "^2.10.2",
-		"mithril": "^0.2.0",
 		"babel-polyfill": "^6.3.14"
 	},
 	"devDependencies":
@@ -56,14 +55,13 @@
 		"style-loader": "latest",
 		"css-loader": "latest",
 		"postcss-loader": "latest",
-		"autoprefixer-loader": "latest",
 
 		"eslint": "latest",
 		"eslint-loader": "latest",
 
-		"ava": "latest",
-		"expect": "latest",
+		"painless": "latest",
 		"istanbul": "latest",
+		"syn": "latest",
 
 		"http-server": "latest",
 		"opener": "latest"
